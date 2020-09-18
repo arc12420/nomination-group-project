@@ -2,8 +2,17 @@ import axios from 'axios';
 
 const initialState = {
   user: { user_id: 0, email: '' },
-  isLoggedIn: false
+  isLoggedIn: false,
+  fundraisers: []
 };
+
+const GET_FUNDRAISERS = 'GET_FUNDRAISERS';
+export function getFundraisers(fundraisers) {
+  return {
+    type: GET_FUNDRAISERS,
+    payload: fundraisers
+  }
+}
 
 const LOGIN_USER = 'LOGIN_USER';
 export function loginUser(user) {
@@ -50,6 +59,8 @@ export default function reducer(state = initialState, action) {
       return { ...state, user: payload, isLoggedIn: true }
     case GET_USER + '_REJECTED':
       return initialState;
+    case GET_FUNDRAISERS:
+      return {...state, fundraisers: payload}
     default:
       return initialState;
   }

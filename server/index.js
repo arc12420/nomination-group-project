@@ -41,6 +41,8 @@ app.use(
   app.get(`/auth/user`, authCtrl.getUser)
   //volunteer project
   app.get('/api/volunteer', postCtrl.getVolunteerProjects)
+  //donations projects
+  app.get('/api/donations', postCtrl.getDonationsProjects)
 
 
 
