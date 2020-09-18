@@ -15,8 +15,8 @@ const Volunteer = () => {
   }, [])
 
   return (
-    <div>
-      <h2>We love Volunteers!</h2>
+    <div className='volunteers'>
+      <h2>We Love Our Volunteers!</h2>
       {volunteerProjects.map(proj => {
         return <VolunteerMapped key={proj.project_id} proj={proj}/>
       })}

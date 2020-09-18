@@ -5,8 +5,8 @@ const VolunteerMapped = (props) => {
 
     const {proj} = props;
     return (
-        <div>
-            <h6>{proj.name}</h6>
+        <div className='volunteer-project'>
+            <h4 className='proj-name'>{proj.name}</h4>
             <p>{proj.date}</p>
             <span>{proj.time}</span>
             <p>{proj.description}</p>

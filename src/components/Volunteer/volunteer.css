@@ -1,0 +1,15 @@
+.volunteers {
+    width: 60%;
+    margin: 50px auto;
+}
+.volunteers > h2 {
+    margin-bottom: 30px;
+}
+
+.volunteer-project {
+    margin-bottom: 25px;
+}
+
+.proj-name {
+    font-weight: bold;
+}
