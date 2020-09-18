@@ -9,6 +9,10 @@ const {
     SESSION_SECRET
 } = process.env;
 
+//CONTROLLERS
+//auth
+const authCtrl = require('./authControllers');
+
 app.use(express.json());
 
 app.use(
@@ -28,6 +32,12 @@ app.use(
     console.log(`Database is connected.`);
   });
 
+  //ENDPOINTS
+  //auth
+  app.post(`/auth/register`, authCtrl.register)
+  app.post(`/auth/login`, authCtrl.login)
+  app.post(`/auth/logout`, authCtrl.logout)
+  app.get(`/auth/user`, authCtrl.getUser)
 
 
 

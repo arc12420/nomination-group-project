@@ -1,4 +1,4 @@
-CREATE TABLE users (
+CREATE TABLE ivoryusers (
     user_id SERIAL PRIMARY KEY,
     first_name TEXT,
     last_name TEXT,
@@ -10,7 +10,7 @@ CREATE TABLE users (
 
 CREATE TABLE donations (
     donation_id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(user_id),
+    user_id INTEGER REFERENCES ivoryusers(user_id),
     project_id INTEGER REFERENCES projects(project_id),
     total INTEGER
     -- or amount
@@ -28,7 +28,7 @@ CREATE TABLE projects (
 
 CREATE TABLE nominations (
     nomination_id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(user_id),
+    user_id INTEGER REFERENCES ivoryusers(user_id),
     name TEXT,
     desctription TEXT
     -- name of whoever is being nominated and description of why
