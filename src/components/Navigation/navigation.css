@@ -1,0 +1,7 @@
+.navigation {
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
