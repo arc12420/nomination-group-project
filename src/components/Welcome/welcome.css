@@ -1,0 +1,19 @@
+body {
+    background-color: #fffff0;
+}
+
+.welcome__jumbotron{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+.welcome__jumbotronInfo {
+    width: 30%;
+}
+.welcome__image{
+    width: 100%;
+    object-fit: contain;
+    z-index: -1;
+    margin-left: -150px;
+    mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}

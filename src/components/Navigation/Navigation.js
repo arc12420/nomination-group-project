@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/reducer';
 import axios from 'axios';
 
+import './navigation.css';
+
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(true);
   const [emailInput, setEmail] = useState('');
@@ -43,7 +45,7 @@ const Navigation = (props) => {
   }
 
   return (
-    <div>
+    <div className="navigation">
       <h1>Logo</h1>
       <section>
         {toggle ? (
