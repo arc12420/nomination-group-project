@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./nomination.css";
+import "./NominationStyle.css";
 import axios from "axios";
 
 function Nomination(props) {
   const [user_id, setUser_id] = useState([]);
   const [nomName, setNomName] = useState([]);
-  const [image, setImage] = useState([]);
   const [content, setContent] = useState([]);
   useEffect(() => {}, []);
 
