@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/reducer';
 import axios from 'axios';
 import './navigation.css';
+import MenuIcon from './MenuIcon';
 
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(true);
@@ -86,9 +87,10 @@ const Navigation = (props) => {
       </section>
       <section>
         {hamtoggle ? (
-          <button
-            onClick={() => { hamburgerToggle(!hamtoggle) }}
-          >#</button>
+          <button id='menuIcon'
+            onClick={() => { hamburgerToggle(!hamtoggle) }}>
+            <MenuIcon width='30px' height='30px' />
+          </button>
         ) : (
             <nav className='navigation-navMenu'>
               <ul>
