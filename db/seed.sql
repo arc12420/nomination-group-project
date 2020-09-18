@@ -23,7 +23,8 @@ CREATE TABLE projects (
     time TEXT,
     location TEXT,
     description TEXT,
-    donation_goal INTEGER
+    donation_goal INTEGER,
+    volunteers_needed BOOLEAN
 );
 
 CREATE TABLE nominations (
