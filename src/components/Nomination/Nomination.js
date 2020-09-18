@@ -39,8 +39,7 @@ function Nomination(props) {
         These are individuals who display great selflessness and giving even
         when it may be difficult.
       </p>
-      <main className="nominationInputs">
-        First Name
+      <main className="nominationInputs">     
         {/* <input
           onChange={(event) => handleFirstName(event.target.value)}
           className=""
