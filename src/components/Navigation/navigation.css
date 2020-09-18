@@ -1,7 +1,63 @@
 .navigation {
-    height: 100px;
+    height: 10%;
     width: 100vw;
+    position: absolute;
     display: flex;
     align-items: center;
-    justify-content: space-evenly; 
+    justify-content: center;
+    z-index: 100;
+    background: yellow;
+}
+
+.navigation-logo {
+    height:10px;
+    width:50%;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 50px;
+}
+
+.navigation-directory {
+    height:100%;
+    width:50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation-signIn {
+    height:100%;
+    width:20%;
+    border: none;
+    background: transparent;
+    font-weight: bolder;
+    font-size: 1.25rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navigation-signIn:hover {
+    cursor: pointer;
+}
+
+.navigation-navMenu {
+    height: 190px;
+    width:10%;
+    position: relative;
+    top:75px;
+    right: 5px;
+    display: flex;
+    justify-content: flex-end;
+    text-align: end;
+    padding:5px 20px 0 0;
+    font-size:1.25rem;
+    background-color: rgb(77, 62, 62);
+}
+
+.navigation-navMenu a {
+    color:white;
+    text-decoration: none;
+}
+
+.navigation-navMenu li a:hover {
+    cursor: pointer;
+    font-size: larger;
 }

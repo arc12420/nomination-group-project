@@ -3,11 +3,11 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/reducer';
 import axios from 'axios';
-
 import './navigation.css';
 
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(true);
+  const [hamtoggle, hamburgerToggle] = useState(true);
   const [emailInput, setEmail] = useState('');
   const [passwordInput, setPassword] = useState('');
 
@@ -46,10 +46,12 @@ const Navigation = (props) => {
 
   return (
     <div className="navigation">
-      <h1>Logo</h1>
-      <section>
+      <section className='navigation-logo'>
+        <h1>Logo</h1>
+      </section>
+      <section className='navigation-directory'>
         {toggle ? (
-          <button
+          <button className='navigation-signIn'
             onClick={() => { setToggle(!toggle) }}
           >Sign In</button>
         ) : (
@@ -78,32 +80,46 @@ const Navigation = (props) => {
               </div>
             </div>
           )}
-        {props.getUser !== true ?
+        {props.getUser === true ?
           <p onClick={() => this.props.history.push('/myaccount')}>My Account</p>
           : null}
       </section>
-      <nav>
-        <ul>
-          {props.location.pathname !== '/' ?
-            <li><Link to='/'>Welcome Page</Link></li>
-            : null}
-          {props.location.pathname !== '/nominations' ?
-            <li><Link to='/nominations'>Nominate Someone</Link></li>
-            : null}
-          {props.location.pathname !== '/donations' ?
-            <li><Link to='/donations'>Donate</Link></li>
-            : null}
-          {props.location.pathname !== '/contact' ?
-            <li><Link to='/contact'>Contact Us</Link></li>
-            : null}
-          {props.location.pathname !== '/volunteer' ?
-            <li><Link to='/volunteer'>Events</Link></li>
-            : null}
-          {props.getUser !== true ?
-            <li onClick={logoutUser}><Link to='/'>Logout</Link></li>
-            : null}
-        </ul>
-      </nav>
+      <section>
+        {hamtoggle ? (
+          <button
+            onClick={() => { hamburgerToggle(!hamtoggle) }}
+          >#</button>
+        ) : (
+            <nav className='navigation-navMenu'>
+              <ul>
+                {props.location.pathname !== '/' ?
+                  <li><Link to='/'>Welcome Page</Link></li>
+                  : null}
+                <br />
+                {props.location.pathname !== '/nomination' ?
+                  <li><Link to='/nomination'>Nominations</Link></li>
+                  : null}
+                <br />
+                {props.location.pathname !== '/donations' ?
+                  <li><Link to='/donations'>Donate</Link></li>
+                  : null}
+                <br />
+                {props.location.pathname !== '/contact' ?
+                  <li><Link to='/contact'>Contact Us</Link></li>
+                  : null}
+                <br />
+                {props.location.pathname !== '/volunteer' ?
+                  <li><Link to='/volunteer'>Events</Link></li>
+                  : null}
+                <br />
+                {props.getUser === true ?
+                  <li onClick={logoutUser}><Link to='/'>Logout</Link></li>
+                  : null}
+              </ul>
+              <p onClick={() => { hamburgerToggle(!hamtoggle) }}>X</p>
+            </nav>
+          )}
+      </section>
     </div>
   )
 }
