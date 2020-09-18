@@ -1,4 +1,5 @@
 import React from 'react';
+import './volunteer.css';
 
 const VolunteerMapped = (props) => {
 
