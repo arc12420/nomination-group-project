@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { logoutUser, getUser } from 'react-redux';
+import { logoutUser, getUser } from '../../redux/reducer';
 import axios from 'axios';
 
 const Navigation = (props) => {
