@@ -1,5 +1,7 @@
 const bcrypt = require('bcrypt');
 
+//authorization fixed. register, login, logout working
+
 module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db');
