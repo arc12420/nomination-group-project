@@ -6,7 +6,7 @@ function Nomination(props) {
   const [user_id, setUser_id] = useState([]);
   const [nomName, setNomName] = useState([]);
   const [content, setContent] = useState([]);
-  useEffect(() => {}, []);
+  useEffect(() => {}, []); 
 
 
 
