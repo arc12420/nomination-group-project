@@ -3,19 +3,14 @@ import "./NominationStyle.css";
 import axios from "axios";
 
 function Nomination(props) {
-  const [user_id, setUser_id] = useState([]);
   const [nomName, setNomName] = useState([]);
   const [content, setContent] = useState([]);
-  useEffect(() => {}, []); 
+  // useEffect(() => {}, []); 
 
 
 
 // ---------------------------Handlers---------------------------------------------
-  // const handleFirstName = (value) => {
-  //   setFirstName(value);
-  // };
-
-  const handleNomName = (value) => {
+    const handleNomName = (value) => {
     setNomName(value);
   };
 
@@ -24,7 +19,7 @@ function Nomination(props) {
   };
 // -------------------------Functions--------------------------------------------  
   const submitNomination = () => {
-    axios.post("/api/addPost", { user_id, nomName, content }).then((res) => {
+    axios.post("/api/nominate", { nomName, content }).then((res) => {
       props.history.push("/");
     });
   };

@@ -43,6 +43,8 @@ app.use(
   app.get('/api/volunteer', postCtrl.getVolunteerProjects)
   //donations projects
   app.get('/api/donations', postCtrl.getDonationsProjects)
+  //nominations
+  app.post(`/api/nominate`, postCtrl.nominate)
 
 
 
