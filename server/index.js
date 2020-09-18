@@ -12,6 +12,7 @@ const {
 //CONTROLLERS
 //auth
 const authCtrl = require('./authControllers');
+const postCtrl = require('./postControllers');
 
 app.use(express.json());
 
@@ -38,6 +39,8 @@ app.use(
   app.post(`/auth/login`, authCtrl.login)
   app.post(`/auth/logout`, authCtrl.logout)
   app.get(`/auth/user`, authCtrl.getUser)
+  //volunteer project
+  app.get('/api/volunteer', postCtrl.getVolunteerProjects)
 
 
 
