@@ -12,6 +12,7 @@ function Nomination(props) {
 // ---------------------------Handlers---------------------------------------------
     const handleNomName = (value) => {
     setNomName(value);
+    console.log(nomName);
   };
      
   const handleContent = (value) => {
