@@ -8,9 +8,13 @@ import MenuIcon from './MenuIcon';
 
 const Navigation = (props) => {
   const [toggle, setToggle] = useState(true);
-  const [hamtoggle, hamburgerToggle] = useState(true);
+  const [hamToggle, setHamToggle] = useState(true);
+  const [regToggle, setRegToggle] = useState(true);
   const [emailInput, setEmail] = useState('');
   const [passwordInput, setPassword] = useState('');
+  const [firstNameInput, setFirstName] = useState('');
+  const [lastNameInput, setLastName] = useState('');
+  const [imageInput, setImage] = useState('');
 
   const handleEmailInput = (event) => {
     const { value } = event.target;
@@ -19,6 +23,21 @@ const Navigation = (props) => {
 
   const handlePasswordInput = (event) => {
     setPassword(event.target.value);
+  };
+
+  const handleFirstNameInput = (event) => {
+    const { value } = event.target;
+    setFirstName(value);
+  };
+
+  const handleLastNameInput = (event) => {
+    const { value } = event.target;
+    setLastName(value);
+  };
+
+  const handleImageInput = (event) => {
+    const { value } = event.target;
+    setImage(value);
   };
 
   const login = () => {
@@ -43,12 +62,30 @@ const Navigation = (props) => {
         this.props.logoutUser();
       })
       .catch(err => console.log(err))
-  }
+  };
+
+  const register = () => {
+    axios
+      .post("/auth/login,authCtrl.register", {
+        firstNameInput,
+        lastNameInput,
+        imageInput,
+        emailInput,
+        passwordInput
+      })
+      .then((res) => {
+        props.getUser();
+        setToggle();
+      })
+      .catch((err) => {
+        alert("Email is already registered");
+      });
+  };
 
   return (
     <div className="navigation">
       <section className='navigation-logo'>
-        <h1>Logo</h1>
+        <img src='' alt='logo' />
       </section>
       <section className='navigation-directory'>
         {toggle ? (
@@ -79,6 +116,61 @@ const Navigation = (props) => {
               <div>
                 <button onClick={() => { setToggle(!toggle) }}>Cancel</button>
               </div>
+              <div>
+                {regToggle ? (
+                  <button onClick={() => { setRegToggle(!regToggle) }}>
+                    Create Account</button>
+                ) : (
+                    <div>
+                      <div>
+                        <input
+                          name='firstName'
+                          type='text'
+                          value={firstNameInput}
+                          placeholder='First Name'
+                          onChange={handleFirstNameInput} />
+                      </div>
+                      <div>
+                        <input
+                          name='lastName'
+                          type='text'
+                          value={lastNameInput}
+                          placeholder='Last Name'
+                          onChange={handleLastNameInput} />
+                      </div>
+                      <div>
+                        <input
+                          name='image'
+                          type='text'
+                          value={imageInput}
+                          placeholder='Upload Profile Pic'
+                          onChange={handleImageInput} />
+                      </div>
+                      <div>
+                        <input
+                          name='email'
+                          type='text'
+                          value={emailInput}
+                          placeholder='Email'
+                          onChange={handleEmailInput} />
+                      </div>
+                      <div>
+                        <input
+                          name='password'
+                          type='password'
+                          value={passwordInput}
+                          placeholder='Password'
+                          onChange={handlePasswordInput} />
+                      </div>
+                      <div>
+                        <button onClick={register}>Register</button>
+                      </div>
+                      <div>
+                        <button onClick={() => { setRegToggle(!regToggle) }}>Cancel</button>
+                      </div>
+                    </div>
+                  )}
+              </div>
             </div>
           )}
         {props.getUser === true ?
@@ -86,9 +178,9 @@ const Navigation = (props) => {
           : null}
       </section>
       <section>
-        {hamtoggle ? (
+        {hamToggle ? (
           <button id='menuIcon'
-            onClick={() => { hamburgerToggle(!hamtoggle) }}>
+            onClick={() => { setHamToggle(!hamToggle) }}>
             <MenuIcon width='30px' height='30px' />
           </button>
         ) : (
@@ -118,7 +210,7 @@ const Navigation = (props) => {
                   <li onClick={logoutUser}><Link to='/'>Logout</Link></li>
                   : null}
               </ul>
-              <p onClick={() => { hamburgerToggle(!hamtoggle) }}>X</p>
+              <p onClick={() => { setHamToggle(!hamToggle) }}>X</p>
             </nav>
           )}
       </section>

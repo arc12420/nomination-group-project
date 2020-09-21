@@ -13,7 +13,7 @@ function Nomination(props) {
     const handleNomName = (value) => {
     setNomName(value);
   };
-
+     
   const handleContent = (value) => {
     setContent(value);
   };
