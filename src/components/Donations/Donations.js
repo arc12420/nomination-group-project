@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {getFundraisers} from '../../redux/reducer';
 import DonationsMapped from './DonationsMapped';
+import './donations.css';
 
 const Donations = () => {
   const state = useSelector(r => r.fundraisers);
@@ -16,7 +17,7 @@ const Donations = () => {
 
   return (
     <div className='donations'>
-      <p>Donations</p>
+      <h2>Donations</h2>
       {state.map(project => {
         return <DonationsMapped key={project.project_id} project={project}/>
       })}
