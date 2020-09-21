@@ -82,10 +82,12 @@ const Navigation = (props) => {
       });
   };
 
+  const logo = require('./a1e3ea8a-6463-4c3a-b255-31d5de75a7e2_200x200.png')
+
   return (
     <div className="navigation">
       <section className='navigation-logo'>
-        <img src='' alt='logo' />
+        <img src={logo} style={{ height: '100px', width: '125px' }} alt='logo' />
       </section>
       <section className='navigation-directory'>
         {toggle ? (

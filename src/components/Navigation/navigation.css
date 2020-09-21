@@ -1,7 +1,7 @@
 .navigation {
     height: 10%;
     width: 100vw;
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,11 +10,10 @@
 }
 
 .navigation-logo {
-    height:10px;
     width:50%;
     display: flex;
     align-items: flex-start;
-    padding-left: 50px;
+    padding-left: 10px;
 }
 
 .navigation-directory {
@@ -37,12 +36,18 @@
 
 .navigation-signIn:hover {
     cursor: pointer;
+    color:ivory;
 }
 
 #menuIcon {
     background: transparent;
     border: none;
     margin-right: 5px;
+}
+
+#menuIcon:hover {
+    cursor: pointer;
+    color: ivory;
 }
 
 .navigation-navMenu {
@@ -56,16 +61,25 @@
     text-align: end;
     padding:5px 5px;
     font-size:1.25rem;
-    background-color: rgb(77, 62, 62);
+    background-color: black;
     opacity: 0.9;
 }
 
 .navigation-navMenu a {
-    color:white;
+    color:ivory;
     text-decoration: none;
 }
 
 .navigation-navMenu li a:hover {
     cursor: pointer;
-    font-size: larger;
+    text-decoration: underline;
+}
+
+.navigation-navMenu p {
+    color:ivory;
+}
+
+.navigation-navMenu p:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
