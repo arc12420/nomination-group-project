@@ -12,6 +12,7 @@ const {
 //CONTROLLERS
 //auth
 const authCtrl = require('./authControllers');
+const paymentCtrl = require('./paymentController');
 const postCtrl = require('./postControllers');
 
 app.use(express.json());
@@ -41,10 +42,14 @@ app.use(
   app.get(`/auth/user`, authCtrl.getUser)
   //volunteer project
   app.get('/api/volunteer', postCtrl.getVolunteerProjects)
-  //donations projects
+  //donations 
   app.get('/api/donations', postCtrl.getDonationsProjects)
+<<<<<<< HEAD
   //nominations
   app.post(`/api/nominate`, postCtrl.nominate)
+=======
+  app.post('/api/payment', paymentCtrl.chargeCustomer)
+>>>>>>> 0f2ea23ed25f8e3af26604dd9345237f7438d11e
 
 
 

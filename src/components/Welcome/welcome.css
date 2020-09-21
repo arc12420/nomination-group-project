@@ -3,7 +3,8 @@ body {
 }
 
 /* Ivory: FFFFF0 */
-/* Minion Yellow: FFE565 */
+/* Minion Yellow: FFE565 NOT USED */
+/* Orange Yello Crayola: F8D463 */
 /* Prussian Blue: 003049 */
 /* Maximum Red: D62828 */
 /* Orange: F77F00 */
@@ -15,55 +16,182 @@ body {
 }
 
 .welcome__jumbotron{
-    height: 80vh;
+    height: 90vh;
     width: 100vw;
     z-index: -1;
-    background-image: url('./../../images/lucas-alexander-LOlMe8HfofI-unsplash.jpg');
+    background-image: url('./../../images/gabrielle-henderson-DgCPTkDqhHg-unsplash.jpg');
     background-size: cover;
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: ivory;
-    margin-bottom: -150px;
     text-align: center;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .welcome__jumbotronTitle {
-    height: 50%;
-    width: 40%;
+    height: 25%;
+    width: 25%;
+    margin-left: 150px;
     display: flex;
+    padding: 0;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 100px;
+    justify-content: flex-start;
+    color: #003049;
 }
 
 .welcome__jumbotronTitle > h1 {
-    font-size: 7em;
+    font-size: 5em;
     font-weight: 800;
 }
 
 .welcome__jumbotronTitle > h5 {
     font-weight: 400;
     font-size: 3em;
+    border-bottom: 1px solid #003049;
+}
+.welcome__jumbotronTitle > button {
+    outline: none;
+    border: none;
+    background: #003049;
+    color: ivory;
+    margin: 35px 15px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+.welcome__jumbotronTitleCards {
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+}
+.titleCard {
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    border-radius: 8px;
+    background-color: lightblue;
 }
 
 .welcome__content {
-    min-height: 100vh;
-    width: 100%;
     max-width: 1600px;
 }
-
 .welcome__row {
-     /* z-index: 1; */
-     height: 600px;
-     width: 100%;
-     margin: 20px auto;
-     background-color: lightgrey;
- }
+    width: 100%;
+    text-align: center;
+}
+
+.welcome__tiles {
+    height: 80%;
+    width: 75%;
+    display: flex;
+}
+.leftTile {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rightTile {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.rightTileTop {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.rightTop {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.topLeft {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topRight {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rightTileBottom {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tile__card {
+    border: 1px solid black;
+}
+
+.welcome__impact {
+    height: 750px;
+    width: 75%;
+    min-width: 1400px;
+    display: flex;
+    background-color: ivory;
+    margin: 50px auto;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+    border-radius: 8px;
+}
+.welcome__impactImage {
+    width: 50%;
+    border-radius: 8px 0 0 8px;
+    object-fit: cover;
+}
+.welcome__impactContent {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.welcome__impactContent > h5 {
+    font-size: 1.5em;
+    margin-bottom: 50px;
+}
+.welcome__impactContent > h1 {
+    
+}
+.welcome__impactContent > button {
+    outline: none;
+    background-color: ivory;
+    border: 2px solid #003049;
+    color: #003049;
+    border-radius: 4px;
+    margin: 50px 50px;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.welcome__donate {
+    height: 500px;
+    width: 70%;
+    margin: 50px auto;
+    border-radius: 8px;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+
+    background-color: rgb(230, 230, 217);
+}
+
+
+
 
 /* Footer */
 
@@ -85,16 +213,28 @@ body {
     margin-left: 5px;
     margin-right: 5px;
 }
+
 .footer__middle {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     height: 100%;
     width: 30%;
     margin-left: 5px;
     margin-right: 5px;
-    text-align: center;    
+    text-align: left; 
+    color: ivory;
 }
+.footer__middleColumn {
+    height: 100%;
+    width: 30%;
+    margin: 0 15px;
+}
+.footer__middleColumn > ul {
+    list-style-type: none;
+    margin: 3px;
+}
+
 .footer__right {
     display: flex;
     justify-content: space-evenly;
