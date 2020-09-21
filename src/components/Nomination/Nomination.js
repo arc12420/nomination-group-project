@@ -3,7 +3,7 @@ import "./NominationStyle.css";
 import axios from "axios";
 
 function Nomination(props) {
-  const [nomName, setNomName] = useState([]);
+  const [name, setNomName] = useState([]);
   const [content, setContent] = useState([]);
   // useEffect(() => {}, []); 
 
@@ -22,7 +22,7 @@ function Nomination(props) {
   };
 // -------------------------Functions--------------------------------------------  
   const submitNomination = () => {
-    axios.post("/api/nominate", { nomName, content }).then((res) => {
+    axios.post("/api/nominate", { name, content }).then((res) => {
       props.history.push("/");
     });
   };
