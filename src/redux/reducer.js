@@ -33,7 +33,7 @@ export function logoutUser() {
 const GET_USER = 'GET_USER';
 export function getUser() {
   const user = axios
-    .get('/auth/user,authCtrl.getUser')
+    .get('/auth/user')
     .then((res) => {
       console.log(res.data)
       return res.data
@@ -60,7 +60,7 @@ export default function reducer(state = initialState, action) {
     case GET_USER + '_REJECTED':
       return initialState;
     case GET_FUNDRAISERS:
-      return {...state, fundraisers: payload}
+      return { ...state, fundraisers: payload }
     default:
       return initialState;
   }

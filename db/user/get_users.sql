@@ -1,0 +1,2 @@
+SELECT *
+FROM ivoryusers;

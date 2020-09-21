@@ -43,12 +43,13 @@ const Navigation = (props) => {
 
   const login = () => {
     axios
-      .post("/auth/login", {
+      .post('/auth/login', {
         email: email,
         password: password,
       })
       .then((res) => {
         props.getUser();
+        props.history.push('/myaccount')
       })
       .catch((err) => {
         alert("Email or password incorrect");
@@ -57,7 +58,7 @@ const Navigation = (props) => {
 
   const logoutUser = () => {
     axios
-      .post('/auth/login,authCtrl.logout')
+      .post('/auth/logout')
       .then(res => {
         this.props.logoutUser();
       })
@@ -66,7 +67,7 @@ const Navigation = (props) => {
 
   const register = () => {
     axios
-      .post("/auth/login,authCtrl.register", {
+      .post('/auth/register', {
         first_name,
         last_name,
         profile_pic,
@@ -75,9 +76,10 @@ const Navigation = (props) => {
       })
       .then((res) => {
         props.getUser();
+        props.history.push('/myaccount')
       })
       .catch((err) => {
-        alert("Email is already registered");
+        alert("Registration Error");
       });
   };
 
@@ -195,8 +197,11 @@ const Navigation = (props) => {
           </div>
           : null}
 
-        {props.getUser === true ?
-          <p onClick={() => this.props.history.push('/myaccount')}>My Account</p>
+        {props.isLoggedIn === true ?
+          <div>
+            <p>{props.user.profile_pic}</p>
+            <p onClick={() => props.history.push('/myaccount')}>My Account</p>
+          </div>
           : null}
 
       </section>
@@ -212,26 +217,26 @@ const Navigation = (props) => {
             <nav className='navigation-navMenu'>
               <ul>
                 {props.location.pathname !== '/' ?
-                  <li><Link to='/'>Welcome Page</Link></li>
+                  <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/'>Welcome Page</Link></li>
                   : null}
                 <br />
                 {props.location.pathname !== '/nomination' ?
-                  <li><Link to='/nomination'>Nominations</Link></li>
+                  <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/nomination'>Nominations</Link></li>
                   : null}
                 <br />
                 {props.location.pathname !== '/donations' ?
-                  <li><Link to='/donations'>Donate</Link></li>
+                  <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/donations'>Donate</Link></li>
                   : null}
                 <br />
                 {props.location.pathname !== '/contact' ?
-                  <li><Link to='/contact'>Contact Us</Link></li>
+                  <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/contact'>Contact Us</Link></li>
                   : null}
                 <br />
                 {props.location.pathname !== '/volunteer' ?
-                  <li><Link to='/volunteer'>Events</Link></li>
+                  <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/volunteer'>Events</Link></li>
                   : null}
                 <br />
-                {props.getUser === true ?
+                {props.isLoggedIn === true ?
                   <li onClick={logoutUser}><Link to='/'>Logout</Link></li>
                   : null}
               </ul>
