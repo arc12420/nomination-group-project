@@ -13,7 +13,6 @@ CREATE TABLE donations (
     user_id INTEGER REFERENCES ivoryusers(user_id),
     project_id INTEGER REFERENCES projects(project_id),
     total INTEGER
-    -- or amount
 );
 
 CREATE TABLE projects (
