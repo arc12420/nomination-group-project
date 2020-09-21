@@ -9,11 +9,21 @@ const DonationsMapped = (props) => {
     return(
         
             <div className='project'>
-                <p>{project.name}</p>
-                <p>${project.donation_goal}</p>
-                <p>{project.donation_pitch}</p>
-                <input type='number' placeholder='Donation Amount' onChange={(e) => setAmount(e.target.value)}/>
-                <Checkout amount={amount * 100} project_id={project.project_id} setAmount={setAmount}/>
+                <div className='boxes'>
+                    <div className='left'>
+                        <img src={project.photo}/>
+                        <p className='project-name'>{project.name.toUpperCase()}</p>
+                    </div>
+                    <div className='right'>
+                        <p className='goal'>Fundraising Goal: ${project.donation_goal}</p>
+                        <p className='pitch'>{project.donation_pitch}</p>
+                        <div className='checkout'>
+                            <input type='number' placeholder='Donation Amount' onChange={(e) => setAmount(e.target.value)}/>
+                            <Checkout  amount={amount * 100} project_id={project.project_id} setAmount={setAmount}/>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         
     )

@@ -18,7 +18,7 @@ const Donations = () => {
 
   return (
     <div className='donations'>
-      <h2>Donations</h2>
+      <h2>Support Projects in Our Community</h2>
       {state.map(project => {
         return <DonationsMapped key={project.project_id} project={project}/>
       })}
