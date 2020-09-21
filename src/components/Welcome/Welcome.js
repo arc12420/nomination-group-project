@@ -37,8 +37,8 @@ const Welcome = () => {
 
           <div className="rightTile">
             <div className="rightTop">
-              <div className="topLeft tile__card"> our partners</div>
-              <div className="topRight tile__card"> just give to people in need bro</div>
+              <div className="topLeft tile__card"> Volunteer</div>
+              <div className="topRight tile__card"> Partner resources</div>
             </div>
             <div className="tile__card rightTileBottom">
               virtual fundraiser
@@ -62,7 +62,7 @@ const Welcome = () => {
       </div>
 
       <div className="welcome__row" style={{display: 'flex', backgroundColor: 'ivory', color: '#003049'}}>
-        <div className="welcome__donate">you dont want to miss this</div>
+        <div className="welcome__donate">Join Our Newsletter</div>
       </div>
 
       <div className="footer">

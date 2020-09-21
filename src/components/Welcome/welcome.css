@@ -1,5 +1,6 @@
 body {
     background-color: ivory;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /* Ivory: FFFFF0 */
@@ -27,7 +28,7 @@ body {
 }
 
 .welcome__jumbotronTitle {
-    height: 25%;
+    height: 75%;
     width: 25%;
     margin-left: 150px;
     display: flex;
@@ -83,6 +84,9 @@ body {
     height: 80%;
     width: 75%;
     display: flex;
+    justify-content: space-between;
+    color: ivory;
+    
 }
 .leftTile {
     height: 100%;
@@ -90,17 +94,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('https://www.nyfa.edu/student-resources/wp-content/uploads/2015/01/oscar-statue_rev1-844x1024.jpg');
+    background-size: 100%;
+    background-position: center;
+    transition: .5s;
+}
+.leftTile:hover {
+    background-size: 125%;
+    background-position: center;
 }
 .rightTile {
     height: 100%;
-    width: 60%;
+    width: 59%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 .rightTileTop {
-    height: 50%;
+    height: 49%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -108,7 +120,7 @@ body {
     flex-direction: row;
 }
 .rightTop {
-    height: 50%;
+    height: 49%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -116,27 +128,61 @@ body {
 }
 .topLeft {
     height: 100%;
-    width: 50%;
+    width: 49%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('https://www.wastatepta.org/wp-content/uploads/2016/11/Senior-volunteer-helping-African-American-man-register-for-marathon-000065245281_Medium.jpg');
+    background-size: 115%;
+    background-position: center;
+    transition: .5s;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.topLeft:hover {
+    background-size: 130%;
+    background-position: center;
 }
 .topRight {
     height: 100%;
-    width: 50%;
+    width: 49%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('https://cf.ltkcdn.net/charity/images/std/248374-699x450-charitable-donation-resources.jpg');
+    background-size: 120%;
+    background-position: center;
+    transition: 0.5s;
+
+ /* option 2: https://namimchenrycounty.org/wp-content/uploads/2018/08/volunteer-hours-budget-nonprofit.jpg */
+}
+.topRight:hover {
+    background-size: 150%;
+    background-position: center;
 }
 .rightTileBottom {
-    height: 50%;
+    height: 49%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('https://getfullyfunded.com/wp-content/uploads/2020/04/donate-on-computer.jpeg');
+    background-size: 115%;
+    background-position: center;
+    transition: 0.5s;
+}
+.rightTileBottom:hover {
+    background-size: 130%;
+    background-position: center;
 }
 .tile__card {
     border: 1px solid black;
+    text-transform: uppercase;
+}
+
+.tile__card:hover {
+    background-color: rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 
 .welcome__impact {
@@ -167,7 +213,7 @@ body {
     margin-bottom: 50px;
 }
 .welcome__impactContent > h1 {
-    
+    font-size: 1.1em;
 }
 .welcome__impactContent > button {
     outline: none;
