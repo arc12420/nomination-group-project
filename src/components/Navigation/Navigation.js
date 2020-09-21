@@ -7,9 +7,10 @@ import './navigation.css';
 import MenuIcon from './MenuIcon';
 
 const Navigation = (props) => {
-  const [toggle, setToggle] = useState(true);
+  const [signInToggle, setSignInToggle] = useState(true);
+  const [loginToggle, setLoginToggle] = useState(false);
   const [hamToggle, setHamToggle] = useState(true);
-  const [regToggle, setRegToggle] = useState(true);
+  const [regToggle, setRegToggle] = useState(false);
   const [emailInput, setEmail] = useState('');
   const [passwordInput, setPassword] = useState('');
   const [firstNameInput, setFirstName] = useState('');
@@ -48,7 +49,7 @@ const Navigation = (props) => {
       })
       .then((res) => {
         props.getUser();
-        setToggle();
+        // setToggle();
       })
       .catch((err) => {
         alert("Email or password incorrect");
@@ -75,7 +76,7 @@ const Navigation = (props) => {
       })
       .then((res) => {
         props.getUser();
-        setToggle();
+        // setToggle();
       })
       .catch((err) => {
         alert("Email is already registered");
@@ -90,13 +91,16 @@ const Navigation = (props) => {
         <img src={logo} style={{ height: '100px', width: '125px' }} alt='logo' />
       </section>
       <section className='navigation-directory'>
-        {toggle ? (
+        {signInToggle ? (
           <button className='navigation-signIn'
-            onClick={() => { setToggle(!toggle) }}
+            onClick={() => { 
+              setSignInToggle(!signInToggle) 
+              setLoginToggle(true)}}
           >Sign In</button>
-        ) : (
-            <div>
-              <div>
+        ) : null}
+        {loginToggle ? 
+        <div>
+          <div>
                 <input
                   name='email'
                   type='text'
@@ -113,18 +117,24 @@ const Navigation = (props) => {
                   onChange={handlePasswordInput} />
               </div>
               <div>
-                <button onClick={login}>Login</button>
+                <button onClick={() => {
+                  login()
+                  setLoginToggle(false)}}>Login</button>
               </div>
               <div>
-                <button onClick={() => { setToggle(!toggle) }}>Cancel</button>
+                <button onClick={() => { 
+                  setSignInToggle(true)
+                  setLoginToggle(!loginToggle) }}>Cancel</button>
               </div>
-              <div>
-                {regToggle ? (
-                  <button onClick={() => { setRegToggle(!regToggle) }}>
+              <button onClick={() => { 
+                setLoginToggle(false)
+                setRegToggle(!regToggle) }}>
                     Create Account</button>
-                ) : (
-                    <div>
-                      <div>
+        </div> : null}
+
+        {regToggle ? 
+        <div>
+           <div>
                         <input
                           name='firstName'
                           type='text'
@@ -168,16 +178,17 @@ const Navigation = (props) => {
                         <button onClick={register}>Register</button>
                       </div>
                       <div>
-                        <button onClick={() => { setRegToggle(!regToggle) }}>Cancel</button>
+                        <button onClick={() => { 
+                          setSignInToggle(true)
+                          setLoginToggle(false)
+                          setRegToggle(!regToggle) }}>Cancel</button>
                       </div>
-                    </div>
-                  )}
-              </div>
-            </div>
-          )}
+        </div> : null}
+
         {props.getUser === true ?
           <p onClick={() => this.props.history.push('/myaccount')}>My Account</p>
           : null}
+        
       </section>
       <section>
         {hamToggle ? (
