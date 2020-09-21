@@ -14,12 +14,13 @@ module.exports = {
     nominate: (req, res) => {
         const dbInstance = req.app.get("db");
         console.log("body", req.body);
-        console.log("session", req.session.user);
+        // console.log("session", req.session.user);
         const { name, content } = req.body;
-        const { userId } = req.session.user;
-    
+        const { user_id } = req.session.user;
+        // console.log(name, content, user);
+        
         dbInstance
-          .addPost([name, content, userId])
+        .post_nominate([user_id, name, content])
           .then(() => res.sendStatus(200))
           .catch((err) => {
             res.status(500).send({
