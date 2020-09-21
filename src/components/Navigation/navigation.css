@@ -42,7 +42,7 @@
 #menuIcon {
     background: transparent;
     border: none;
-    margin-right: 5px;
+    margin-right: 20px;
 }
 
 #menuIcon:hover {
@@ -82,4 +82,20 @@
 .navigation-navMenu p:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+.login-box {
+    height:40vh;
+    width:30%;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color:rgb(255,255,240,0.7);
+    margin-top: 5px;
+    border-radius: 5%;
+}
+
+.login-box-inputs {
+    padding:5px;
 }

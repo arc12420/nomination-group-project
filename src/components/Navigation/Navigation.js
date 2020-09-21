@@ -11,11 +11,11 @@ const Navigation = (props) => {
   const [loginToggle, setLoginToggle] = useState(false);
   const [hamToggle, setHamToggle] = useState(true);
   const [regToggle, setRegToggle] = useState(false);
-  const [emailInput, setEmail] = useState('');
-  const [passwordInput, setPassword] = useState('');
-  const [firstNameInput, setFirstName] = useState('');
-  const [lastNameInput, setLastName] = useState('');
-  const [imageInput, setImage] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [first_name, setFirstName] = useState('');
+  const [last_name, setLastName] = useState('');
+  const [profile_pic, setImage] = useState('');
 
   const handleEmailInput = (event) => {
     const { value } = event.target;
@@ -44,12 +44,11 @@ const Navigation = (props) => {
   const login = () => {
     axios
       .post("/auth/login", {
-        email: emailInput,
-        password: passwordInput,
+        email: email,
+        password: password,
       })
       .then((res) => {
         props.getUser();
-        // setToggle();
       })
       .catch((err) => {
         alert("Email or password incorrect");
@@ -68,15 +67,14 @@ const Navigation = (props) => {
   const register = () => {
     axios
       .post("/auth/login,authCtrl.register", {
-        firstNameInput,
-        lastNameInput,
-        imageInput,
-        emailInput,
-        passwordInput
+        first_name,
+        last_name,
+        profile_pic,
+        email,
+        password
       })
       .then((res) => {
         props.getUser();
-        // setToggle();
       })
       .catch((err) => {
         alert("Email is already registered");
@@ -93,107 +91,121 @@ const Navigation = (props) => {
       <section className='navigation-directory'>
         {signInToggle ? (
           <button className='navigation-signIn'
-            onClick={() => { 
-              setSignInToggle(!signInToggle) 
-              setLoginToggle(true)}}
+            onClick={() => {
+              setSignInToggle(!signInToggle)
+              setLoginToggle(true)
+            }}
           >Sign In</button>
         ) : null}
-        {loginToggle ? 
-        <div>
-          <div>
-                <input
-                  name='email'
-                  type='text'
-                  value={emailInput}
-                  placeholder='Email'
-                  onChange={handleEmailInput} />
-              </div>
-              <div>
-                <input
-                  name='password'
-                  type='password'
-                  value={passwordInput}
-                  placeholder='Password'
-                  onChange={handlePasswordInput} />
-              </div>
-              <div>
-                <button onClick={() => {
-                  login()
-                  setLoginToggle(false)}}>Login</button>
-              </div>
-              <div>
-                <button onClick={() => { 
-                  setSignInToggle(true)
-                  setLoginToggle(!loginToggle) }}>Cancel</button>
-              </div>
-              <button onClick={() => { 
+        {loginToggle ?
+          <div className="login-box">
+            <div className='login-box-inputs'>
+              <input
+                name='email'
+                type='text'
+                value={email}
+                placeholder='Email'
+                onChange={handleEmailInput} />
+            </div>
+            <div className='login-box-inputs'>
+              <input
+                name='password'
+                type='password'
+                value={password}
+                placeholder='Password'
+                onChange={handlePasswordInput} />
+            </div>
+            <div className='login-box-buttons'>
+              <button onClick={() => {
+                login()
                 setLoginToggle(false)
-                setRegToggle(!regToggle) }}>
-                    Create Account</button>
-        </div> : null}
-
-        {regToggle ? 
-        <div>
-           <div>
-                        <input
-                          name='firstName'
-                          type='text'
-                          value={firstNameInput}
-                          placeholder='First Name'
-                          onChange={handleFirstNameInput} />
-                      </div>
-                      <div>
-                        <input
-                          name='lastName'
-                          type='text'
-                          value={lastNameInput}
-                          placeholder='Last Name'
-                          onChange={handleLastNameInput} />
-                      </div>
-                      <div>
-                        <input
-                          name='image'
-                          type='text'
-                          value={imageInput}
-                          placeholder='Upload Profile Pic'
-                          onChange={handleImageInput} />
-                      </div>
-                      <div>
-                        <input
-                          name='email'
-                          type='text'
-                          value={emailInput}
-                          placeholder='Email'
-                          onChange={handleEmailInput} />
-                      </div>
-                      <div>
-                        <input
-                          name='password'
-                          type='password'
-                          value={passwordInput}
-                          placeholder='Password'
-                          onChange={handlePasswordInput} />
-                      </div>
-                      <div>
-                        <button onClick={register}>Register</button>
-                      </div>
-                      <div>
-                        <button onClick={() => { 
-                          setSignInToggle(true)
-                          setLoginToggle(false)
-                          setRegToggle(!regToggle) }}>Cancel</button>
-                      </div>
-        </div> : null}
+              }}>Login</button>
+              <button onClick={() => {
+                setSignInToggle(true)
+                setLoginToggle(!loginToggle)
+                setEmail('')
+                setPassword('')
+              }}>Cancel</button>
+            </div>
+            <div id='login-box-create'>
+              <button onClick={() => {
+                setLoginToggle(false)
+                setRegToggle(!regToggle)
+              }}>
+                Create Account</button>
+            </div>
+          </div> : null}
+        {regToggle ?
+          <div>
+            <div>
+              <input
+                name='firstName'
+                type='text'
+                value={first_name}
+                placeholder='First Name'
+                onChange={handleFirstNameInput} />
+            </div>
+            <div>
+              <input
+                name='lastName'
+                type='text'
+                value={last_name}
+                placeholder='Last Name'
+                onChange={handleLastNameInput} />
+            </div>
+            <div>
+              <input
+                name='image'
+                type='text'
+                value={profile_pic}
+                placeholder='Upload Profile Pic'
+                onChange={handleImageInput} />
+            </div>
+            <div>
+              <input
+                name='email'
+                type='text'
+                value={email}
+                placeholder='Email'
+                onChange={handleEmailInput} />
+            </div>
+            <div>
+              <input
+                name='password'
+                type='password'
+                value={password}
+                placeholder='Password'
+                onChange={handlePasswordInput} />
+            </div>
+            <div>
+              <button onClick={register}>Register</button>
+            </div>
+            <div>
+              <button onClick={() => {
+                setSignInToggle(true)
+                setLoginToggle(false)
+                setRegToggle(!regToggle)
+                setFirstName('')
+                setLastName('')
+                setImage('')
+                setEmail('')
+                setPassword('')
+              }}>Cancel</button>
+            </div>
+          </div>
+          : null}
 
         {props.getUser === true ?
           <p onClick={() => this.props.history.push('/myaccount')}>My Account</p>
           : null}
-        
+
       </section>
       <section>
         {hamToggle ? (
           <button id='menuIcon'
-            onClick={() => { setHamToggle(!hamToggle) }}>
+            onClick={() => {
+              setHamToggle(!hamToggle)
+            }}>
             <MenuIcon width='30px' height='30px' />
           </button>
         ) : (
