@@ -44,12 +44,9 @@ app.use(
   app.get('/api/volunteer', postCtrl.getVolunteerProjects)
   //donations 
   app.get('/api/donations', postCtrl.getDonationsProjects)
-<<<<<<< HEAD
   //nominations
   app.post(`/api/nominate`, postCtrl.nominate)
-=======
   app.post('/api/payment', paymentCtrl.chargeCustomer)
->>>>>>> 0f2ea23ed25f8e3af26604dd9345237f7438d11e
 
 
 
