@@ -3,7 +3,7 @@ import React from 'react';
 const DonationsMapped = (props) => {
     const {project} = props;
     return(
-        <div>
+        <div className='project'>
             <p>{project.name}</p>
             <p>${project.donation_goal}</p>
             <p>{project.donation_pitch}</p>

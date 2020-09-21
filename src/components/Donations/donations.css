@@ -1,4 +1,14 @@
 .donations {
-    background-color: red;
+    position: relative;
+    top: 120px;
+    width: 60%;
+    margin: 0 auto;
     
+}
+.donations > h2 {
+    margin-bottom: 30px;
+}
+
+.project {
+    margin-bottom: 25px;
 }
