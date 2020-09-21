@@ -12,10 +12,13 @@ function Nomination(props) {
 // ---------------------------Handlers---------------------------------------------
     const handleNomName = (value) => {
     setNomName(value);
+    // console.log(nomName);
   };
      
   const handleContent = (value) => {
     setContent(value);
+    // console.log(content);
+    // console.log(props.match.params.id);
   };
 // -------------------------Functions--------------------------------------------  
   const submitNomination = () => {
