@@ -16,6 +16,10 @@
     padding-left: 10px;
 }
 
+.navigation-logo img:hover {
+    cursor: pointer;
+}
+
 .navigation-directory {
     height:100%;
     width:50%;
