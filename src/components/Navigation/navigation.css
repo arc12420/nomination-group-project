@@ -99,3 +99,41 @@
 .login-box-inputs {
     padding:5px;
 }
+
+.login-box-buttons {
+    width:80%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.login-box-buttons button {
+    color:ivory;
+    background:transparent;
+    border:none;
+    text-decoration: underline;
+}
+
+.login-box-buttons button:hover {
+    cursor: pointer;
+}
+
+#login-box-create {
+    height: 100%;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#login-box-create button {
+    background: transparent;
+    border:none;
+    color: ivory;
+    font-size: 1.25rem;
+    text-decoration: underline;
+}
+
+#login-box-create button:hover {
+    cursor: pointer;
+}
