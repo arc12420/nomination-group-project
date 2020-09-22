@@ -1,7 +1,8 @@
-
 .myAccountComponent{
     height: 100%;
     width: 100vw;
+    background-color: #f0d374;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .myAccountContent{
@@ -17,8 +18,10 @@
     height: auto;
     min-height: 60vh;
     width: 80%;
-    background-color: rgb(177, 175, 175);
+    background-color: #003049;
     padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     margin-top: 100px;
     margin-bottom: 100px;
     display: flex;
@@ -26,27 +29,48 @@
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-    border: grey 2px solid;
-    border-radius: 2px;
-
+    border: grey 1px solid;
+    border-radius: 8px;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
 }
 
 .profileInfo{
     height:auto;
     min-height: 130px;
-    width: 99.6%;
+    width: 97%;
+    padding: 10px;  
     background-color: ivory;
     margin-bottom: 20px;
-    border: grey 2px solid;
-    border-radius: 2px;
-    
+    border: grey 1px solid;
+    border-radius: 8px;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);  
+    display: flex;
+    flex-direction: row;
 }
 
 .statusAndHistory{
     height:auto;
     min-height: 430px;
-    width: 99.6%;
-    border: grey px solid;
-    border-radius: 2px;
+    width: 97%;
+    padding: 10px;  
+    border: grey 1px solid;
+    border-radius: 8px;
     background-color: ivory;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+}
+
+
+.profileInfoContent{
+    min-width: 170px;
+    width: auto;
+    height: 170px;
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+.myAccountProfileImage{
+    height: 170px;
+    width: 170px;
+    object-fit: cover;
+    border-radius: 8px;
 }

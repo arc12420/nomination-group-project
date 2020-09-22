@@ -49,14 +49,14 @@ function Nomination(props) {
         <input
           onChange={(event) => handleNomName(event.target.value)}
           className=""
-          placeholder="NomName"
+          placeholder="Nominee Name"
           // value={}
         />
         Why do they deserve this award?
         <textarea
           onChange={(event) => handleContent(event.target.value)}
           className="whyTheyDeserve"
-          placeholder="Why do they deserve this award?"
+          placeholder="Description about why your Nominee deserves this award"
           // value={}
         />
         <button 
