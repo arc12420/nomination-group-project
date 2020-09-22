@@ -92,7 +92,8 @@ const Navigation = (props) => {
   return (
     <div className="navigation">
       <section className='navigation-logo'>
-        <img src={logo} style={{ height: '100px', width: '125px' }} alt='logo' />
+        <img src={logo} style={{ height: '125px', width: '150px' }} alt='logo'
+          onClick={() => props.history.push('/')} />
       </section>
       <section className='navigation-directory'>
         {signInToggle ? (
