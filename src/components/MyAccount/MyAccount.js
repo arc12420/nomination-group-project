@@ -30,7 +30,6 @@ const MyAccount = (props) => {
           <p></p>
         </main>
       </div>
-      <Footer />
     </div>
 
   );

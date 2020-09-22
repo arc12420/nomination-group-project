@@ -16,6 +16,10 @@
     padding-left: 10px;
 }
 
+.navigation-logo img:hover {
+    cursor: pointer;
+}
+
 .navigation-directory {
     height:100%;
     width:50%;
@@ -36,7 +40,6 @@
 
 .navigation-signIn:hover {
     cursor: pointer;
-    color:ivory;
 }
 
 #menuIcon {
@@ -47,26 +50,21 @@
 
 #menuIcon:hover {
     cursor: pointer;
-    color: ivory;
 }
 
 .navigation-navMenu {
-    height: 250px;
+    height: 275px;
     width:100%;
     position: relative;
     top:100px;
     right: 35px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     text-align: end;
     padding:5px;
     font-size:1.25rem;
     background-color: rgba(0,0,0);
-}
-
-.navigation-navMenu:hover {
-    background-color: rgb(0,0,0, 0.7);
-    transition: background-color 1s;
 }
 
 .navigation-navMenu a {
@@ -81,6 +79,7 @@
 
 .navigation-navMenu p {
     color:ivory;
+    padding:5px;
 }
 
 .navigation-navMenu p:hover {
@@ -162,6 +161,10 @@
     font-weight: bolder;
 }
 
+#myaccount-link:hover {
+    text-decoration: underline;
+}
+
 #profile-pic {
     height:85px;
     width:85px;
@@ -169,4 +172,5 @@
     border-radius: 50%;
     border:thin dashed rgb(15, 15, 54);
     image-rendering: auto;
+    object-fit: cover;
 }
