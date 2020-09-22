@@ -12,7 +12,9 @@ CREATE TABLE donations (
     donation_id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES ivoryusers(user_id),
     project_id INTEGER REFERENCES projects(project_id),
-    total INTEGER
+    total INTEGER,
+    date DATE,
+    project_name TEXT
 );
 
 CREATE TABLE projects (
@@ -23,7 +25,8 @@ CREATE TABLE projects (
     location TEXT,
     description TEXT,
     donation_goal INTEGER,
-    volunteers_needed BOOLEAN
+    volunteers_needed BOOLEAN,
+    photo TEXT
 );
 
 CREATE TABLE nominations (
