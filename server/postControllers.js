@@ -30,5 +30,11 @@ module.exports = {
             console.log(err);
           });
       },
+      getDonationsTotals: async (req, res) => {
+        const db = req.app.get('db');
+        const getDonations = await db.get_donations();
+        console.log(getDonations)
+        res.status(200).send(getDonations)
+      }
 
 }
