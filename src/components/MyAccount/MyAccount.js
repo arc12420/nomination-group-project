@@ -1,6 +1,7 @@
 import React from "react";
 import "../MyAccount/MyAccountStyling.css";
 
+
 import Footer from "../Footer/Footer";
 
 const MyAccount = () => {

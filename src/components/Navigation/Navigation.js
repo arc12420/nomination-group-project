@@ -53,6 +53,7 @@ const Navigation = (props) => {
       })
       .catch((err) => {
         alert("Email or password incorrect");
+        setSignInToggle(!signInToggle)
       });
   };
 
@@ -78,6 +79,7 @@ const Navigation = (props) => {
       })
       .then((res) => {
         props.getUser();
+        setRegToggle(!regToggle)
         props.history.push('/myaccount')
       })
       .catch((err) => {
@@ -140,8 +142,8 @@ const Navigation = (props) => {
             </div>
           </div> : null}
         {regToggle ?
-          <div>
-            <div>
+          <div className='login-box'>
+            <div className="login-box-inputs">
               <input
                 name='firstName'
                 type='text'
@@ -149,7 +151,7 @@ const Navigation = (props) => {
                 placeholder='First Name'
                 onChange={handleFirstNameInput} />
             </div>
-            <div>
+            <div className="login-box-inputs">
               <input
                 name='lastName'
                 type='text'
@@ -157,7 +159,7 @@ const Navigation = (props) => {
                 placeholder='Last Name'
                 onChange={handleLastNameInput} />
             </div>
-            <div>
+            <div className="login-box-inputs">
               <input
                 name='image'
                 type='text'
@@ -165,7 +167,7 @@ const Navigation = (props) => {
                 placeholder='Upload Profile Pic'
                 onChange={handleImageInput} />
             </div>
-            <div>
+            <div className="login-box-inputs">
               <input
                 name='email'
                 type='text'
@@ -173,7 +175,7 @@ const Navigation = (props) => {
                 placeholder='Email'
                 onChange={handleEmailInput} />
             </div>
-            <div>
+            <div className="login-box-inputs">
               <input
                 name='password'
                 type='password'
@@ -181,10 +183,10 @@ const Navigation = (props) => {
                 placeholder='Password'
                 onChange={handlePasswordInput} />
             </div>
-            <div>
+            <div className='login-box-buttons'>
               <button onClick={register}>Register</button>
             </div>
-            <div>
+            <div className='login-box-buttons'>
               <button onClick={() => {
                 setSignInToggle(true)
                 setLoginToggle(false)
@@ -200,9 +202,9 @@ const Navigation = (props) => {
           : null}
 
         {props.isLoggedIn === true ?
-          <div>
-            <p>{props.user.profile_pic}</p>
-            <Link to='./myaccount'>My Account</Link>
+          <div className='user-nav-box'>
+            <img id='profile-pic' src={props.user.profile_pic} alt='No Profile Pic' />
+            <Link id='myaccount-link' to='./myaccount'>My Account</Link>
           </div>
           : null}
 
