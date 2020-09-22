@@ -11,24 +11,24 @@ function Nomination(props) {
 
 
 
-// ---------------------------Handlers---------------------------------------------
-    const handleNomName = (value) => {
+  // ---------------------------Handlers---------------------------------------------
+  const handleNomName = (value) => {
     setNomName(value);
     // console.log(nomName);
   };
-     
+
   const handleContent = (value) => {
     setContent(value);
     // console.log(content);
     // console.log(props.match.params.id);
   };
-// -------------------------Functions--------------------------------------------  
+  // -------------------------Functions--------------------------------------------  
   const submitNomination = () => {
     axios.post("/api/nominate", { name, content }).then((res) => {
       props.history.push("/");
     });
   };
-//------------------------Returned Data------------------------------------------
+  //------------------------Returned Data------------------------------------------
   return (
     <div className="nominationComponent">
       <p className="nominationAbout">
@@ -38,7 +38,7 @@ function Nomination(props) {
         These are individuals who display great selflessness and giving even
         when it may be difficult.
       </p>
-      <main className="nominationInputs">     
+      <main className="nominationInputs">
         {/* <input
           onChange={(event) => handleFirstName(event.target.value)}
           className=""
@@ -51,6 +51,7 @@ function Nomination(props) {
           className=""
           placeholder="Nominee Name"
           // value={}
+
         />
         Why do they deserve this award?
         <textarea
@@ -59,16 +60,14 @@ function Nomination(props) {
           placeholder="Description about why your Nominee deserves this award"
           // value={}
         />
-        <button 
+        <button
           onClick={submitNomination}
           className="submitButton"
-          >
-            Submit
+        >
+          Submit
           </button>
       </main>
 
-      <Footer/>
-      
     </div>
   );
 }
