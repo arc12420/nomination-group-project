@@ -1,5 +1,5 @@
 import React from "react";
-import "../MyAccount/myAccount.css";
+import "../MyAccount/MyAccountStyling.css";
 
 import Footer from "../Footer/Footer";
 
