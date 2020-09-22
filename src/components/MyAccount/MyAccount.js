@@ -1,12 +1,20 @@
-import React from 'react';
+import React from "react";
+import "../MyAccount/myAccount.css";
+
+import Footer from "../Footer/Footer";
 
 const MyAccount = () => {
-
   return (
-    <div>
-      <p>MyAccount</p>
+    <div className="myAccountComponent">
+      <div className="myAccountContent">
+        <main className="accountInfo">
+          <p className="profileInfo">Profile Info</p>
+          <p className="statusAndHistory" >Past Donations/ nominations and status of nominations</p>
+        </main>
+      </div>
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default MyAccount;

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./NominationStyle.css";
 import axios from "axios";
 
+import Footer from '../Footer/Footer';
+
 function Nomination(props) {
   const [name, setNomName] = useState([]);
   const [content, setContent] = useState([]);
@@ -64,6 +66,9 @@ function Nomination(props) {
             Submit
           </button>
       </main>
+
+      <Footer/>
+      
     </div>
   );
 }
