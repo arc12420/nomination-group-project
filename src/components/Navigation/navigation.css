@@ -161,6 +161,10 @@
     font-weight: bolder;
 }
 
+#myaccount-link:hover {
+    text-decoration: underline;
+}
+
 #profile-pic {
     height:85px;
     width:85px;
@@ -168,4 +172,5 @@
     border-radius: 50%;
     border:thin dashed rgb(15, 15, 54);
     image-rendering: auto;
+    object-fit: cover;
 }

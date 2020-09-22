@@ -14,7 +14,6 @@ const MyAccount = () => {
           <p></p>
         </main>
       </div>
-      <Footer />
     </div>
 
   );

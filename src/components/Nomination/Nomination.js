@@ -11,24 +11,24 @@ function Nomination(props) {
 
 
 
-// ---------------------------Handlers---------------------------------------------
-    const handleNomName = (value) => {
+  // ---------------------------Handlers---------------------------------------------
+  const handleNomName = (value) => {
     setNomName(value);
     // console.log(nomName);
   };
-     
+
   const handleContent = (value) => {
     setContent(value);
     // console.log(content);
     // console.log(props.match.params.id);
   };
-// -------------------------Functions--------------------------------------------  
+  // -------------------------Functions--------------------------------------------  
   const submitNomination = () => {
     axios.post("/api/nominate", { name, content }).then((res) => {
       props.history.push("/");
     });
   };
-//------------------------Returned Data------------------------------------------
+  //------------------------Returned Data------------------------------------------
   return (
     <div className="nominationComponent">
       <p className="nominationAbout">
@@ -38,7 +38,7 @@ function Nomination(props) {
         These are individuals who display great selflessness and giving even
         when it may be difficult.
       </p>
-      <main className="nominationInputs">     
+      <main className="nominationInputs">
         {/* <input
           onChange={(event) => handleFirstName(event.target.value)}
           className=""
@@ -50,25 +50,23 @@ function Nomination(props) {
           onChange={(event) => handleNomName(event.target.value)}
           className=""
           placeholder="NomName"
-          // value={}
+        // value={}
         />
         Why do they deserve this award?
         <textarea
           onChange={(event) => handleContent(event.target.value)}
           className="whyTheyDeserve"
           placeholder="Why do they deserve this award?"
-          // value={}
+        // value={}
         />
-        <button 
+        <button
           onClick={submitNomination}
           className="submitButton"
-          >
-            Submit
+        >
+          Submit
           </button>
       </main>
 
-      <Footer/>
-      
     </div>
   );
 }
