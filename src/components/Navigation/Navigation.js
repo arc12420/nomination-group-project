@@ -77,8 +77,8 @@ const Navigation = (props) => {
         email,
         password
       })
-      .then((res) => {
-        props.getUser();
+      .then(async (res) => {
+        await props.getUser();
         setRegToggle(!regToggle)
         props.history.push('/myaccount')
       })
