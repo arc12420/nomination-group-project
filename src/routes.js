@@ -6,6 +6,7 @@ import MyAccount from './components/MyAccount/MyAccount';
 import Nomination from './components/Nomination/Nomination';
 import Volunteer from './components/Volunteer/Volunteer';
 import Welcome from './components/Welcome/Welcome';
+import ThankYou from './components/Donations/ThankYou';
 
 export default (
   <Switch>
@@ -15,5 +16,6 @@ export default (
     <Route path='/myaccount' component={MyAccount} />
     <Route path='/donations' component={Donations} />
     <Route path='/contact' component={Contact} />
+    <Route path='/thanks' component={ThankYou}/>
   </Switch>
 );

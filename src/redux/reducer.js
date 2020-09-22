@@ -3,8 +3,25 @@ import axios from 'axios';
 const initialState = {
   user: { user_id: 0, email: '' },
   isLoggedIn: false,
-  fundraisers: []
+  fundraisers: [],
+  donation: {}
 };
+
+const ADD_DONATION = 'ADD_DONATION';
+export function addDonation(donation) {
+  return {
+    type: ADD_DONATION,
+    payload: donation 
+  }
+}
+
+// const GET_DONATION = 'GET_DONATION';
+// export function getDonation(donation) {
+//   return {
+//     type: GET_DONATION,
+//     payload: donation
+//   }
+// }
 
 const GET_FUNDRAISERS = 'GET_FUNDRAISERS';
 export function getFundraisers(fundraisers) {
@@ -60,7 +77,9 @@ export default function reducer(state = initialState, action) {
     case GET_USER + '_REJECTED':
       return initialState;
     case GET_FUNDRAISERS:
-      return { ...state, fundraisers: payload }
+      return { ...state, fundraisers: payload };
+    case ADD_DONATION:
+      return {...state, donation: payload};
     default:
       return initialState;
   }

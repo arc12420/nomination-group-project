@@ -12,9 +12,15 @@ module.exports = {
                 description: 'Test Donation'
             })
         const db = req.app.get('db');
-        const {user_id, project_id} = req.body;
-        const payment = await db.donations([user_id, project_id, amount]);
-        res.status(200).send(payment);
+        const {user_id, project_id, date, project_name} = req.body;
+        if (user_id === 0) {
+           const payment = await db.userless_donations([project_id, amount, date, project_name]);
+           res.status(200).send(payment); 
+        } else {
+            const payment = await db.donations([user_id, project_id, amount, date, project_name]);
+            res.status(200).send(payment);
+        }
+        
 
         if (!charge) {
             throw new Error('unsuccessful charge')

@@ -19,7 +19,7 @@ const DonationsMapped = (props) => {
                         <p className='pitch'>{project.donation_pitch}</p>
                         <div className='checkout'>
                             <input type='number' placeholder='Donation Amount' onChange={(e) => setAmount(e.target.value)}/>
-                            <Checkout  amount={amount * 100} project_id={project.project_id} setAmount={setAmount}/>
+                            <Checkout  amount={amount * 100} project_id={project.project_id} project_name={project.name}/>
                         </div>
                     </div>
                 </div>
