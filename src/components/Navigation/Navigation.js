@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/reducer';
@@ -48,7 +48,7 @@ const Navigation = (props) => {
         password: password,
       })
       .then((res) => {
-        props.getUser();
+        props.getUser()
         props.history.push('/myaccount')
       })
       .catch((err) => {
@@ -60,7 +60,8 @@ const Navigation = (props) => {
     axios
       .post('/auth/logout')
       .then(res => {
-        this.props.logoutUser();
+        this.props.logoutUser()
+        props.history.push('/')
       })
       .catch(err => console.log(err))
   };
@@ -200,7 +201,7 @@ const Navigation = (props) => {
         {props.isLoggedIn === true ?
           <div>
             <p>{props.user.profile_pic}</p>
-            <p onClick={() => props.history.push('/myaccount')}>My Account</p>
+            <Link to='./myaccount'>My Account</Link>
           </div>
           : null}
 
