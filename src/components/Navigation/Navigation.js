@@ -238,7 +238,7 @@ const Navigation = (props) => {
                   : null}
                 <br />
                 {props.isLoggedIn === true ?
-                  <li onClick={logoutUser}><Link to='/'>Logout</Link></li>
+                  <li onClick={logoutUser}><Link onClick={() => setHamToggle(!hamToggle)} to='/'>Logout</Link></li>
                   : null}
               </ul>
               <p onClick={() => { setHamToggle(!hamToggle) }}>X</p>
