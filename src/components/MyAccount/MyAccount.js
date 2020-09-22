@@ -16,7 +16,7 @@ const MyAccount = (props) => {
         <main className="accountInfo">
           <div className="profileInfo">
             <img 
-            src='https://i.insider.com/5f04a202988ee362df3f5316?width=1100&format=jpeg&auto=webp'
+            src={props.user.profile_pic}
             className="myAccountProfileImage"
             alt="Profile Picture" />
             <div className="profileInfoContent">
