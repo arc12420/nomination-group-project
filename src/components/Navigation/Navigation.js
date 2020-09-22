@@ -60,7 +60,8 @@ const Navigation = (props) => {
     axios
       .post('/auth/logout')
       .then(res => {
-        this.props.logoutUser()
+        props.logoutUser()
+        setSignInToggle(!signInToggle)
         props.history.push('/')
       })
       .catch(err => console.log(err))

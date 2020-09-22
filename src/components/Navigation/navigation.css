@@ -51,10 +51,10 @@
 }
 
 .navigation-navMenu {
-    height: 190px;
+    height: 250px;
     width:100%;
     position: relative;
-    top:75px;
+    top:100px;
     right: 35px;
     display: flex;
     justify-content: flex-end;
