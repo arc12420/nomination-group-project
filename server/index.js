@@ -49,5 +49,5 @@ app.get(`/api/userNominations/:user_id`, postCtrl.getUserNominations);
 app.get(`/api/userDonations/:user_id`, postCtrl.getUserDonations);
 
 app.listen(SERVER_PORT, () =>
-  console.log(`You are connected to port ${SERVER_PORT}.`)
+console.log(`You are connected to port ${SERVER_PORT}.`)
 );

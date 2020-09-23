@@ -18,7 +18,7 @@ const Volunteer = () => {
     <div className='volunteers'>
       <h2>We Love Our Volunteers!</h2>
       {volunteerProjects.map(proj => {
-        return <VolunteerMapped key={proj.project_id} proj={proj}/>
+        return <VolunteerMapped className='chowderchowder' key={proj.project_id} proj={proj} />
       })}
       
       
