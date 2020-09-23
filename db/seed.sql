@@ -33,7 +33,8 @@ CREATE TABLE nominations (
     nomination_id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES ivoryusers(user_id),
     name TEXT,
-    content TEXT
+    content TEXT,
+    status VARCHAR(100) DEFAULT 'submitted'
     -- name of whoever is being nominated and description of why
 )
 

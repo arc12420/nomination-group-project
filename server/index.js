@@ -47,6 +47,8 @@ app.use(
   app.get('/api/donations/total', postCtrl.getDonationsTotals)
   //nominations
   app.post(`/api/nominate`, postCtrl.nominate)
+  app.get('/api/nominations', postCtrl.getNominations)
+  //payment
   app.post('/api/payment', paymentCtrl.chargeCustomer)
 
 
