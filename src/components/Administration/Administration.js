@@ -25,14 +25,27 @@ const Administration = () => {
         })
       .catch(err => console.log(err))
       
-  }, [status])
-
+  }, [changeStatus])
+  useEffect(() => {
+    nominations.map(nom => {
+      if (nom.status === 'Submitted') {
+        submitted.push(nom);
+      } else if (nom.status === 'Under Review') {
+        underReview.push(nom)
+      } else if (nom.status === 'Finalist') {
+        finalists.push(nom)
+      } else if (nom.status === 'Accepted!') {
+        accepted.push(nom)
+      } else if (nom.status === 'Declined') {
+        declined.push(nom)
+      }
+    })
+  }, [changeStatus])
   nominations.map(nom => {
     if (nom.status === 'Submitted') {
       submitted.push(nom);
     } else if (nom.status === 'Under Review') {
       underReview.push(nom)
-      console.log('hitting under review')
     } else if (nom.status === 'Finalist') {
       finalists.push(nom)
     } else if (nom.status === 'Accepted!') {
