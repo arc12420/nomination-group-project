@@ -6,7 +6,7 @@ const Administration = () => {
   const [nominations, setNominations] = useState([]);
   const [status, setStatus] = useState('');
 
-  const submitted = [];
+  
   const underReview = [];
   const finalists = [];
   const accepted = [];
@@ -28,9 +28,8 @@ const Administration = () => {
   }, [changeStatus])
   useEffect(() => {
     nominations.map(nom => {
-      if (nom.status === 'Submitted') {
-        submitted.push(nom);
-      } else if (nom.status === 'Under Review') {
+
+      if (nom.status === 'Under Review') {
         underReview.push(nom)
       } else if (nom.status === 'Finalist') {
         finalists.push(nom)
@@ -42,9 +41,7 @@ const Administration = () => {
     })
   }, [changeStatus])
   nominations.map(nom => {
-    if (nom.status === 'Submitted') {
-      submitted.push(nom);
-    } else if (nom.status === 'Under Review') {
+    if (nom.status === 'Under Review') {
       underReview.push(nom)
     } else if (nom.status === 'Finalist') {
       finalists.push(nom)
@@ -68,29 +65,12 @@ const Administration = () => {
 
   return (
     <div className='admin'>
-      <div className='submitted'>
-        <h3>Submitted</h3>
-        {submitted.map(nom => {
-          return (<div key={nom.nomination_id}>
-            <h2>Nominee: {nom.name}</h2>
-            <p>Submission: {nom.content}</p>
-            <select onChange={handleChange}>
-              <option>{nom.status}</option>
-              <option value='Under Review'>Under Review</option>
-              <option value='Finalist'>Finalist</option> 
-              <option value='Accepted!'>Accepted!</option>
-              <option value='Declined'>Declined</option>
-            </select>
-            <button onClick={() => changeStatus(nom.nomination_id)}>Save</button>
-          </div>)
-        })}
-
-      </div>
-      <div className='under-review'>
+      
+      <div className='status-container'>
         <h3>Under Review</h3>
         {underReview.map(nom => {
           return (<div key={nom.nomination_id}>
-            <h2>Nominee: {nom.name}</h2>
+            <h2>{nom.name}</h2>
             <p>Submission: {nom.content}</p>
             <select onChange={handleChange}>
               <option>{nom.status}</option>
@@ -103,11 +83,11 @@ const Administration = () => {
           </div>)
         })}
       </div>
-      <div className='finalists'>
+      <div className='status-container'>
         <h3>Finalists</h3>
         {finalists.map(nom => {
           return (<div key={nom.nomination_id}>
-            <h2>Nominee: {nom.name}</h2>
+            <h2>{nom.name}</h2>
             <p>Submission: {nom.content}</p>
             <select onChange={handleChange}>
               <option>{nom.status}</option>
@@ -121,11 +101,11 @@ const Administration = () => {
         })}
       </div>
 
-      <div className='accepted'>
+      <div className='status-container'>
         <h3>Accepted</h3>
         {accepted.map(nom => {
           return (<div key={nom.nomination_id}>
-            <h2>Nominee: {nom.name}</h2>
+            <h2>{nom.name}</h2>
             <p>Submission: {nom.content}</p>
             <select onChange={handleChange}>
               <option>{nom.status}</option>
@@ -139,11 +119,11 @@ const Administration = () => {
         })}
       </div>
 
-      <div className='declined'>
+      <div className='status-container'>
         <h3>Declined</h3>
         {declined.map(nom => {
           return (<div key={nom.nomination_id}>
-            <h2>Nominee: {nom.name}</h2>
+            <h2>{nom.name}</h2>
             <p>Submission: {nom.content}</p>
             <select onChange={handleChange}>
               <option>{nom.status}</option>
