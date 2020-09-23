@@ -48,6 +48,7 @@ app.use(
   //nominations
   app.post(`/api/nominate`, postCtrl.nominate)
   app.get('/api/nominations', postCtrl.getNominations)
+  app.put('/api/status', postCtrl.changeStatus)
   //payment
   app.post('/api/payment', paymentCtrl.chargeCustomer)
 

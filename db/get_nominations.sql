@@ -1,2 +1,1 @@
-SELECT * FROM nominations
-WHERE status = 'submitted';
+SELECT * FROM nominations;

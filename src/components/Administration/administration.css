@@ -1,0 +1,13 @@
+.admin {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div > h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
