@@ -3,7 +3,15 @@ const express = require("express");
 const session = require("express-session");
 const massive = require("massive");
 const app = express();
-const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET } = process.env;
+
+const nodemailer = require('nodemailer');
+const {
+  CONNECTION_STRING,
+  SERVER_PORT,
+  SESSION_SECRET,
+  NODEMAILER_USER,
+  NODEMAILER_PASSWORD
+} = process.env;
 
 //CONTROLLERS
 //auth
@@ -27,8 +35,38 @@ massive({
   ssl: { rejectUnauthorized: false },
 }).then((db) => {
   app.set("db", db);
+  app.set('transporter', transporter)
   console.log(`Database is connected.`);
 });
+
+
+// Contact Email
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: NODEMAILER_USER,
+    pass: NODEMAILER_PASSWORD
+  }
+});
+
+app.post('/access', (req, res, next) => {
+  const mailOptions = {
+    from: req.body.contactEmail,
+    to: NODEMAILER_USER,
+    subject: "Support",
+    text: req.body.message,
+  };
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      res.sendStatus(500)
+      return console.log(error);
+    } else {
+      res.status(200).send('success');
+    }
+    console.log("Email sent successfully!");
+  });
+})
+
 
 //ENDPOINTS
 //auth
