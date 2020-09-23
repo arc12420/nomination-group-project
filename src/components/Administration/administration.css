@@ -1,0 +1,49 @@
+.admin {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    /* background-color: red; */
+    
+    margin: 10px auto;
+}
+
+div > h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 18px;
+    text-decoration: underline;
+}
+
+.status-container > div > button {
+    background-color: rgb(200, 200, 255);
+    border: 0px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 2px 2px 2px rgb(190, 190, 190);
+    margin-left: 5px;
+    
+}
+
+.status-container > div > h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+
+}
+
+select {
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    
+}
+
+.status-container >  div {
+    
+    width: 230px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
