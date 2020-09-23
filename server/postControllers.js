@@ -46,11 +46,9 @@ module.exports = {
           const db = req.app.get('db');
           const {nomination_id, status} = req.body;
           const newStatus = await db.change_status([nomination_id, status]);
+          res.status(200).send(projects);
           
-      }
-
-    res.status(200).send(projects);
-  },
+      },
   getDonationsProjects: async (req, res) => {
     const db = req.app.get("db");
     const projects = await db.get_donations_projects();
