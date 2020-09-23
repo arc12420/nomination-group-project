@@ -2,14 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./NominationStyle.css";
 import axios from "axios";
 
-import Footer from '../Footer/Footer';
-
 function Nomination(props) {
   const [name, setNomName] = useState([]);
   const [content, setContent] = useState([]);
-  // useEffect(() => {}, []); 
-
-
+  // useEffect(() => {}, []);
 
   // ---------------------------Handlers---------------------------------------------
   const handleNomName = (value) => {
@@ -22,7 +18,7 @@ function Nomination(props) {
     // console.log(content);
     // console.log(props.match.params.id);
   };
-  // -------------------------Functions--------------------------------------------  
+  // -------------------------Functions--------------------------------------------
   const submitNomination = () => {
     axios.post("/api/nominate", { name, content }).then((res) => {
       props.history.push("/");
@@ -51,7 +47,6 @@ function Nomination(props) {
           className=""
           placeholder="Nominee Name"
           // value={}
-
         />
         Why do they deserve this award?
         <textarea
@@ -60,14 +55,10 @@ function Nomination(props) {
           placeholder="Description about why your Nominee deserves this award"
           // value={}
         />
-        <button
-          onClick={submitNomination}
-          className="submitButton"
-        >
+        <button onClick={submitNomination} className="submitButton">
           Submit
-          </button>
+        </button>
       </main>
-
     </div>
   );
 }

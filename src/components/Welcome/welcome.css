@@ -65,11 +65,19 @@ body {
     justify-content:space-evenly;
 }
 .titleCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: space-between;
     height: 150px;
     width: 150px;
     margin: 10px;
-    border-radius: 8px;
-    background-color: lightblue;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.titleCard > p {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .welcome__content {
@@ -94,9 +102,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url('https://www.nyfa.edu/student-resources/wp-content/uploads/2015/01/oscar-statue_rev1-844x1024.jpg');
-    background-size: 100%;
-    background-position: center;
+    background: url('https://cdn.vox-cdn.com/thumbor/ZRnmbHL-UwjW6H96EsUZG11UGeE=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/10985863/oscar_stock_640.0.jpg');
+    background-size: 110%;
+    background-position: center center;
     transition: .5s;
 }
 .leftTile:hover {
@@ -178,8 +186,8 @@ body {
 .tile__card {
     /* border: 1px solid black; */
     text-transform: uppercase;
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 800;
     border-radius: 5px;
     
 }

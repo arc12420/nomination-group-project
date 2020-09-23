@@ -1,8 +1,9 @@
-require('dotenv').config()
-const express = require('express');
-const session = require('express-session');
-const massive = require('massive');
+require("dotenv").config();
+const express = require("express");
+const session = require("express-session");
+const massive = require("massive");
 const app = express();
+
 const nodemailer = require('nodemailer');
 const {
   CONNECTION_STRING,
@@ -14,9 +15,9 @@ const {
 
 //CONTROLLERS
 //auth
-const authCtrl = require('./authControllers');
-const paymentCtrl = require('./paymentController');
-const postCtrl = require('./postControllers');
+const authCtrl = require("./authControllers");
+const paymentCtrl = require("./paymentController");
+const postCtrl = require("./postControllers");
 
 app.use(express.json());
 
@@ -69,20 +70,24 @@ app.post('/access', (req, res, next) => {
 
 //ENDPOINTS
 //auth
-app.post(`/auth/register`, authCtrl.register)
-app.post(`/auth/login`, authCtrl.login)
-app.post(`/auth/logout`, authCtrl.logout)
-app.get(`/auth/user`, authCtrl.getUser)
+app.post(`/auth/register`, authCtrl.register);
+app.post(`/auth/login`, authCtrl.login);
+app.post(`/auth/logout`, authCtrl.logout);
+app.get(`/auth/user`, authCtrl.getUser);
 //volunteer project
-app.get('/api/volunteer', postCtrl.getVolunteerProjects)
-//donations 
-app.get('/api/donations', postCtrl.getDonationsProjects)
-app.get('/api/donations/total', postCtrl.getDonationsTotals)
+app.get("/api/volunteer", postCtrl.getVolunteerProjects);
+//donations
+app.get("/api/donations", postCtrl.getDonationsProjects);
+app.get("/api/donations/total", postCtrl.getDonationsTotals);
 //nominations
-app.post(`/api/nominate`, postCtrl.nominate)
-app.post('/api/payment', paymentCtrl.chargeCustomer)
-
+app.post(`/api/nominate`, postCtrl.nominate);
+app.get('/api/nominations', postCtrl.getNominations)
+app.put('/api/status', postCtrl.changeStatus)
+app.post("/api/payment", paymentCtrl.chargeCustomer);
+//My Account
+app.get(`/api/userNominations/:user_id`, postCtrl.getUserNominations);
+app.get(`/api/userDonations/:user_id`, postCtrl.getUserDonations);
 
 app.listen(SERVER_PORT, () =>
-  console.log(`You are connected to port ${SERVER_PORT}.`)
+console.log(`You are connected to port ${SERVER_PORT}.`)
 );

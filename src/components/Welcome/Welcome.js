@@ -20,9 +20,18 @@ const Welcome = () => {
           <h5>Living Through Giving</h5>
           <button>LEARN MORE</button>
           <div className="welcome__jumbotronTitleCards">
-            <div className="titleCard">Take The Pledge</div>
-            <div className="titleCard">Start Your Project</div>
-            <div className="titleCard">Show Your Impact</div>
+            <div className="titleCard">
+              <p>Take The Pledge</p>
+              <img src={require('../../images/Handshake.png')} alt="" style={{ width: '110px' , marginTop: '20px'}}/>
+            </div>
+            <div className="titleCard">
+              <p>Start Your Project</p>
+              <img src={require('../../images/74-512.png')} alt="" style={{ width: '85px' }}/>
+            </div>
+            <div className="titleCard">
+              <p>Show Your Impact</p>
+              <img src={require('../../images/award.png')} alt="" style={{ width: '80px' }}/>
+            </div>
           </div>
         </div>
       </div>

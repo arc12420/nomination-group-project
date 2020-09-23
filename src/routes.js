@@ -8,6 +8,7 @@ import Volunteer from './components/Volunteer/Volunteer';
 import Welcome from './components/Welcome/Welcome';
 import ThankYou from './components/Donations/ThankYou';
 
+
 export default (
   <Switch>
     <Route exact path='/' component={Welcome} />
@@ -17,5 +18,6 @@ export default (
     <Route path='/donations' component={Donations} />
     <Route path='/contact' component={Contact} />
     <Route path='/thanks' component={ThankYou}/>
+    
   </Switch>
 );
