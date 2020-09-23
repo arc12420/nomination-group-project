@@ -11,7 +11,7 @@ import PinterestIcon from '@material-ui/icons/Pinterest';
 function Footer() {
     return (
         <div className="footer">
-        <div className="footer__left">Copyright © {new Date().getFullYear()}, Ivory Foundation</div>
+        <div className="footer__left">Copyright © {new Date().getFullYear()}, Ivory Foundation, no rights reserved, this is a demo</div>
         <div className="footer__middle">
           <div className="footer__middleColumn">
             <h4>Get To Know Us</h4>
@@ -21,13 +21,11 @@ function Footer() {
             <p>careers</p>
           </div>
           <div className="footer__middleColumn">
-            <ul>
               <h4>Get Involved</h4>
-              <li>fundraise</li>
-              <li>brand partnerships</li>
-              <li>request a speaker</li>
-              <li>shop our store</li>
-            </ul>
+              <p>fundraise</p>
+              <p>brand partnerships</p>
+              <p>request a speaker</p>
+              <p>shop our store</p>
           </div>
           <div className="footer__middleColumn">
             <h4>Donate</h4>
