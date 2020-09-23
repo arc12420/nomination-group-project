@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100%;
     max-width: 1500px;
-    margin: 50px auto;
+    margin: 0 auto;
     overflow: scroll;
 }
 
@@ -14,13 +14,20 @@
     display: flex;
     align-items: center;
     justify-items: space-between;
+    background: center center;
+    background-size: 100%;
     margin: 40px;
     height: 40%;
     min-width: 200px;
     border: 1px solid #F8D463;
     border-radius: 15px;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 1);
+    transition: 0.5s;
 }
+.volunteer__projectCard:hover{
+    background-size: 102%;
+}
+
 .volunteer__projectCardInfo{
     display: flex;
     flex-direction: column;
@@ -29,18 +36,34 @@
     height: 100%;
     width: 50%;
     /* background: rgba(0,48,73, 1); */
-    background: rgba(0,0,0, 0.7);
+    background: rgba(0,0,0, 0.6);
     color: ivory;
     border-radius: 15px 0 0 15px;
 }
 .volunteer__projectCardInfo > p{
    margin-left: 20px;
+   font-size: 20px;
 }
 .volunteer__projectCardInfo > span{
     margin-left: 20px;
+    font-size: 30px;
  }
  .volunteer__projectCardInfo > button{
     margin: 25px auto;
+    outline: none;
+    border: 1px solid ivory;
+    border-radius: 15px;
+    padding: 15px;
+    background: transparent;
+    font-size: 16px;
+    color: ivory;
+    transition: .2s;
+ }
+ .volunteer__projectCardInfo > button:hover{
+    background: ivory;
+    color: #003049;
+    border: 1px solid #003049;
+    cursor: pointer;
  }
 
 .proj-name {
