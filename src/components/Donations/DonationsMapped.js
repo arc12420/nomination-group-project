@@ -39,6 +39,12 @@ const DonationsMapped = (props) => {
                             <Checkout  amount={amount * 100} project_id={project.project_id} project_name={project.name}/>
                         </div>
                         <div className="project__progress">
+                          
+                                <div className="meter__info">
+                                    <p>
+                                        ${progressBarWidth} raised of ${project.donation_goal} goal from 
+                                    </p>
+                                </div>
                             <div className="meter">
                                 <span style={{width: `${progressBarWidth/100}%`, maxWidth: '100%'}}></span>
                                 {/* {console.log(`${project.name}'s total donations >>> ${progressBarWidth}`)} */}

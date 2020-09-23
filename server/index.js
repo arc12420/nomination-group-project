@@ -78,7 +78,7 @@ app.get(`/auth/user`, authCtrl.getUser);
 app.get("/api/volunteer", postCtrl.getVolunteerProjects);
 //donations
 app.get("/api/donations", postCtrl.getDonationsProjects);
-app.get("/api/donations/total", postCtrl.getDonationsTotals);
+app.get("/api/donations/:project_id", postCtrl.getDonationProgress);
 //nominations
 app.post(`/api/nominate`, postCtrl.nominate);
 app.get('/api/nominations', postCtrl.getNominations)
