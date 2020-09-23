@@ -44,7 +44,7 @@ app.use(
   app.get('/api/volunteer', postCtrl.getVolunteerProjects)
   //donations 
   app.get('/api/donations', postCtrl.getDonationsProjects)
-  app.get('/api/donations/total', postCtrl.getDonationsTotals)
+  app.get('/api/donations/:id', postCtrl.getDonationsTotals)
   //nominations
   app.post(`/api/nominate`, postCtrl.nominate)
   app.post('/api/payment', paymentCtrl.chargeCustomer)

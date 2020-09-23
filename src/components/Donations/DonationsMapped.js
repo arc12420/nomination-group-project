@@ -6,18 +6,20 @@ import './Progress.css';
 
 const DonationsMapped = (props) => {
     const [amount, setAmount] = useState(0);
-    // const [donations, setDonations] = useState([])
     const {project} = props;
     
-    //progress bar
-    // const [progress, setProgress] = useState(0)
     
-    // const fiilterDonations = axios.get('/api/donations/total').then((response) => {
-    //     console.log(response)
+    const [progressBarWidth, setProgressBarWidth] = useState(0);
 
-    //     const totals = response.data.map(donation => {donation.project_id === })
-        
-    // })
+    useEffect(() => {
+        axios.get(`/api/donations/${project.project_id}`)
+        .then(response => {
+            const resTotals = response.data.map(x => x.total).reduce((donation, donationTotal) => donation + donationTotal, 0);
+            const donationOffset = (resTotals / 100)
+            setProgressBarWidth(donationOffset)
+            
+        }).catch(err => console.log(err))
+    }, [])
 
 
 
@@ -38,8 +40,8 @@ const DonationsMapped = (props) => {
                         </div>
                         <div className="project__progress">
                             <div className="meter">
-                                <span style={{width: `25%`, maxWidth: '100%'}}></span>
-                                {/* {console.log(donations)} */}
+                                <span style={{width: `${progressBarWidth/100}%`, maxWidth: '100%'}}></span>
+                                {/* {console.log(`${project.name}'s total donations >>> ${progressBarWidth}`)} */}
                             </div>
                         </div>
                     </div>
