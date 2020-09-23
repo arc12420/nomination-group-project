@@ -29,14 +29,14 @@ module.exports = {
             });
             console.log(err);
           });
-      },
-      getDonationsTotals: async (req, res) => {
+    },
+    getDonationProgress: async (req, res) => {
         const db = req.app.get('db');
-        const { id } = req.params;
-        const getDonations = await db.get_donations(id);
+        const { project_id } = req.params;
+        const getDonations = await db.get_donations(project_id);
         console.log(getDonations)
         res.status(200).send(getDonations)
-      },
+    },
       getNominations: async (req, res) => {
           const db = req.app.get('db');
           const nominations = await db.get_nominations();
