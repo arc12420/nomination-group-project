@@ -1,11 +1,12 @@
 .footer {
-    height: 100px;
+    height: 200px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #003049;
     color: Ivory;
+    z-index: 1;
 }
 .footer__left {
     display: flex;
