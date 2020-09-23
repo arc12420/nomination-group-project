@@ -32,8 +32,9 @@ module.exports = {
       },
       getDonationsTotals: async (req, res) => {
         const db = req.app.get('db');
-        const getDonations = await db.get_donations();
-        
+        const { id } = req.params;
+        const getDonations = await db.get_donations(id);
+        console.log(getDonations)
         res.status(200).send(getDonations)
       },
       getNominations: async (req, res) => {
