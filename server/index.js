@@ -43,6 +43,8 @@ app.get("/api/donations", postCtrl.getDonationsProjects);
 app.get("/api/donations/total", postCtrl.getDonationsTotals);
 //nominations
 app.post(`/api/nominate`, postCtrl.nominate);
+app.get('/api/nominations', postCtrl.getNominations)
+app.put('/api/status', postCtrl.changeStatus)
 app.post("/api/payment", paymentCtrl.chargeCustomer);
 //My Account
 app.get(`/api/userNominations/:user_id`, postCtrl.getUserNominations);

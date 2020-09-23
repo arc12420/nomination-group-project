@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { getUser } from "../../redux/reducer";
+import Admin from '../Administration/Administration';
 import axios from "axios";
 
 import "../MyAccount/MyAccountStyling.css";
@@ -84,7 +85,7 @@ class MyAccount extends Component {
                 <p>{this.props.user.email}</p>
               </div>
             </div>
-            <div className="statusAndHistory">
+            {!this.props.user.isadmin ? <div className="statusAndHistory">
               Past Donations/ nominations and status of nominations
               <hr />
               <h6>Donations</h6>
@@ -93,7 +94,9 @@ class MyAccount extends Component {
               <h6>Nominations</h6>
               <hr />
               <p>{mappedNominations}</p>
-            </div>
+            </div> : <div className='statusAndHistory'>
+              <h1>Nomination Submissions</h1>
+              <Admin/></div>}
           </main>
         </div>
       </div>

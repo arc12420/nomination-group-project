@@ -7,7 +7,7 @@ import Nomination from './components/Nomination/Nomination';
 import Volunteer from './components/Volunteer/Volunteer';
 import Welcome from './components/Welcome/Welcome';
 import ThankYou from './components/Donations/ThankYou';
-import Admin from './components/Administration/Administration';
+
 
 export default (
   <Switch>
@@ -18,6 +18,6 @@ export default (
     <Route path='/donations' component={Donations} />
     <Route path='/contact' component={Contact} />
     <Route path='/thanks' component={ThankYou}/>
-    <Route path='/admin' component={Admin}/>
+    
   </Switch>
 );
