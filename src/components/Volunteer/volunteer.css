@@ -1,13 +1,14 @@
 .volunteers {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
-    overflow: scroll;
 }
 
+
 .volunteers > h2 {
-    padding-top: 90px;
+    padding-top: 105px;
     margin: 0 auto;
     text-align: center;
     margin-bottom: 25px;
