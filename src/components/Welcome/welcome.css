@@ -94,7 +94,9 @@ body {
     display: flex;
     justify-content: space-between;
     color: ivory;
-    
+}
+.welcome_tiles > Link {
+    height: 100%;
 }
 .leftTile {
     height: 100%;
@@ -237,13 +239,58 @@ body {
     padding: 15px 10px;
     font-size: 16px;
     font-weight: 600;
+    transition: 0.2s;
 }
-.welcome__donate {
-    height: 500px;
+.welcome__impactContent > button:hover{
+    cursor: pointer;
+    background-color: #003049;
+    color: ivory;
+}
+.welcome__newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
     width: 70%;
     margin: 50px auto;
     border-radius: 8px;
+    border: 1px solid #003049;
+    color: #003049;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
-
-    background-color: rgb(230, 230, 217);
 }
+
+.welcome__newsletter > h2 {
+    font-size: 3rem;
+    padding: 10px;
+    border-bottom: 1px solid #003049;
+    margin-bottom: 15px;
+}
+.welcome__newsletterInputs {
+    display: flex;
+}
+.welcome__newsletterInputs > input {
+    outline: none;
+    border: 1px solid #003049;
+    border-radius: 99px;
+    padding: 10px;
+    margin: 15px;
+}
+.welcome__newsletter > button {
+    outline: none;
+    background-color: ivory;
+    border: 2px solid #003049;
+    color: #003049;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.welcome__newsletter > button:hover {
+    cursor: pointer;
+    background-color: #003049;
+    color: ivory;
+}
+
