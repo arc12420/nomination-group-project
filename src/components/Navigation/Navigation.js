@@ -66,7 +66,6 @@ const Navigation = (props) => {
       .post('/auth/logout')
       .then(res => {
         props.logoutUser()
-        setSignInToggle(!signInToggle)
         props.history.push('/')
       })
       .catch(err => console.log(err))
@@ -100,7 +99,7 @@ const Navigation = (props) => {
           onClick={() => props.history.push('/')} />
       </section>
       <section className='navigation-directory'>
-        {signInToggle ? (
+        {(signInToggle) && (props.user.user_id === 0) ? (
           <button className='navigation-signIn'
             onClick={() => {
               setSignInToggle(!signInToggle)
