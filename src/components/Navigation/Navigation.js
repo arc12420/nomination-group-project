@@ -19,7 +19,7 @@ const Navigation = (props) => {
 
   useEffect(() => {
     props.getUser()
-  })
+  },[])
 
   const handleEmailInput = (event) => {
     const { value } = event.target;
