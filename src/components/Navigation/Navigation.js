@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/reducer';
@@ -16,6 +16,10 @@ const Navigation = (props) => {
   const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState('');
   const [profile_pic, setImage] = useState('');
+
+  useEffect(() => {
+    props.getUser()
+  })
 
   const handleEmailInput = (event) => {
     const { value } = event.target;
