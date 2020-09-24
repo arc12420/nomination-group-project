@@ -30,8 +30,8 @@ const Contact = () => {
         <form
           onSubmit={submitRequest}>
           <h2>Contact us</h2>
-          <div>
-            <label htmlFor='contactEmail'>Your Email</label>
+          <div id='address-box'>
+            <label htmlFor='contactEmail'>Your Email:</label>
             <input
               type='text'
               name='contactEmail'
@@ -40,7 +40,7 @@ const Contact = () => {
               value={contactEmail}
               required />
           </div>
-          <div>
+          <div id='message-box'>
             <label htmlFor='message'>How can we help?</label>
             <textarea
               type='text'
@@ -50,7 +50,7 @@ const Contact = () => {
               value={message}
               required />
           </div>
-          <div>
+          <div id='button-box'>
             <button type='submit'>Submit</button>
           </div>
         </form>

@@ -6,9 +6,9 @@ import Button from '@material-ui/core/Button'
 
 const VolunteerMapped = (props) => {
 
-    const {proj} = props;
+    const { proj } = props;
     return (
-        <div className='volunteer__projectCard' style={{backgroundImage: `url(${proj.photo})`}}>
+        <div className='volunteer__projectCard' style={{ backgroundImage: `url(${proj.photo})` }}>
             <div className="volunteer__projectCardInfo">
                 <h4 className='proj-name'>{proj.name}</h4>
                 <span>{proj.date}</span>
