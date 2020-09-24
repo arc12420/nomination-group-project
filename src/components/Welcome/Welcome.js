@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './welcome.css';
-// import Tile from './Tile'
 
-//icons
-
-import Footer from '../Footer/Footer';
-
-// const rhinoSVG = require('../../images/6wDbV8l-rhino-outline-clipart.png')
 const helpingHands = require('../../images/elaine-casap-qgHGDbbSNm8-unsplash.jpg')
 
 const Welcome = () => {
+
+  const [newsletterInput, setNewsletterInput] = useState({
+    name: '',
+    email: ''
+  });
+
+  const handleInput = ( event ) => {
+    setNewsletterInput({...newsletterInput, [event.target.name]: event.target.value})
+  }
+
+  const signUp = () => {
+    setNewsletterInput({
+      name: '', 
+      email:''
+    })
+    if(newsletterInput.name && newsletterInput.email !== ''){
+      alert('Thank you for joining our newsletter!')
+    } else {
+      alert('Please enter a valid email address')
+    }
+  }
 
   return (
     <div className="welcome">
@@ -39,7 +55,7 @@ const Welcome = () => {
       <div className="welcome__row" style={{ height: '75vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <div className="welcome__tiles">
 
-          <div className="tile__card leftTile">nominated community members</div>
+          <Link to='/nomination'><div className="tile__card leftTile">nominated community members</div></Link>
 
           <div className="rightTile">
             <div className="rightTop">
@@ -68,7 +84,18 @@ const Welcome = () => {
       </div>
 
       <div className="welcome__row" style={{ display: 'flex', backgroundColor: 'ivory', color: '#003049' }}>
-        <div className="welcome__donate">Join Our Newsletter</div>
+        <div className="welcome__newsletter">
+          <h2>Join our Newsletter</h2>
+
+          <div className="welcome__newsletterInputs">
+            <input name="name" value={newsletterInput.name} type="text" onChange={handleInput} placeholder="Name" required/>
+            <input name="email" value={newsletterInput.email} type="email" onChange={handleInput} placeholder="Email" required/>
+          </div>
+
+          <button onClick={ signUp }>Sign Up Today</button>
+
+
+        </div>
       </div>
 
     </div>
