@@ -5,3 +5,71 @@
   align-items: center;
   justify-content: center;
 }
+
+.contact div {
+  height: 60%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact form {
+  height:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEh8TyHvQP7tHxycs1hAClHkwfjqDR3f1q7Q&usqp=CAU');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10%;
+}
+
+form h2 {
+  padding-top:15px;
+  font-size: 2rem;
+  color: ivory;
+}
+
+#address-box {
+  color: ivory;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+#message-box {
+  color:ivory;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+}
+
+#message-box textarea {
+  width:100%;
+  height:50%;
+}
+
+#button-box {
+  width: 50%;
+}
+
+#button-box button {
+  width:80%;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: ivory;
+  background: transparent;
+  border: none;
+  font-weight: bolder;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#button-box button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

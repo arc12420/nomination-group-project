@@ -53,10 +53,10 @@
 }
 
 .navigation-navMenu {
-    height: 275px;
+    height: 100%;
     width:100%;
     position: relative;
-    top:100px;
+    top:175px;
     right: 35px;
     display: flex;
     flex-direction: column;
@@ -64,7 +64,10 @@
     text-align: end;
     padding:5px;
     font-size:1.25rem;
-    background-color: rgba(0,0,0);
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTEh8TyHvQP7tHxycs1hAClHkwfjqDR3f1q7Q&usqp=CAU');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5%;
 }
 
 .navigation-navMenu a {
