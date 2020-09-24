@@ -106,12 +106,13 @@
     font-weight: normal;
     font-size: 20px;
     margin: 10px;
-    width: 60%;
+    width: 70%;
 }
 .proj-container {
     display: flex;
     width: 105%;
     justify-content: space-between;
+    margin-top: 10px;
 }
 .proj {
     background-position: center;
@@ -121,11 +122,21 @@
     border-radius: 5px;
     z-index: 1;
     position: relative;
+
+    
+
 }
 
-.proj-info {
-    position: relative;
-    padding-top: 5px;
-    z-index: 2;
-    background-color: black;
+
+.proj:hover {
+    opacity: 90%;
+    cursor: pointer;
+    
 }
+
+hr {
+    background-color: black;
+    height: 1px;
+    width: 70%;
+}
+
