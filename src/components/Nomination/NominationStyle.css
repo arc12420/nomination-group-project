@@ -17,7 +17,7 @@
 .nominationAbout{
     background-color: #ebebeb;    
     /* background-image: url(https://www.designbolts.com/wp-content/uploads/2013/02/Rose-Grey-Seamless-Patterns-For-Website-Background.jpg);     */
-    border: 1px solid #F8D463;
+    border: 1px solid #adadad;
     border-radius: 8px;
     width: 80%;
     height: auto;
@@ -26,6 +26,7 @@
     text-align: center;
     box-shadow: -10px 10px 11px -7px rgba(0, 0, 0, 01);
     padding:20px;
+    margin-bottom: 40px;
 }
 
 .nominationInputs{
@@ -34,7 +35,7 @@
     width: 80%;
     /* background-image: url(https://www.designbolts.com/wp-content/uploads/2013/02/Rose-Grey-Seamless-Patterns-For-Website-Background.jpg); */
     background-color: #ebebeb;    
-    border: 1px solid #F8D463;
+    border: 1px solid #adadad;
     border-radius: 8px;
     display: flex;
     /* justify-content: center; */
@@ -42,7 +43,7 @@
     justify-content: space-evenly;
     flex-direction: column;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-radius: 8px;
     box-shadow: -10px 10px 11px -7px rgba(0, 0, 0, 01);
 }
@@ -110,8 +111,8 @@ input{
 } */
 
 .nomImage{
-    height:200px;
-    width: 300px;
+    height:300px;
+    width: 450px;
     background-color: burlywood;
     object-fit: scale-down;
     margin-right: 150px;
@@ -129,4 +130,5 @@ input{
     font-size: 20px;
     margin-right: 27px;
     margin-bottom: 27px;
+    cursor: pointer;
 }
