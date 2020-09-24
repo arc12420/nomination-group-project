@@ -1,14 +1,20 @@
 .donations {
-    position: relative;
-    top: 120px;
-    width: 75%;
+    padding-top: 90px;
+    width: 85%;
     margin: 0 auto;
     
 }
 .donations > h2 {
-    margin-bottom: 30px;
+    margin: 0 auto;
+    margin-bottom: 50px;
     font-family: 'Open Sans', sans-serif;
     font-size: 30px;
+    border-bottom: 3px solid black;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1.5px;
+    width: 46%;
 }
 
 .project {
