@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './welcome.css';
 
 const helpingHands = require('../../images/elaine-casap-qgHGDbbSNm8-unsplash.jpg')
 
 const Welcome = () => {
+
+  const history = useHistory();
 
   const [newsletterInput, setNewsletterInput] = useState({
     name: '',
@@ -55,14 +57,14 @@ const Welcome = () => {
       <div className="welcome__row" style={{ height: '75vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <div className="welcome__tiles">
 
-          <Link to='/nomination'><div className="tile__card leftTile">nominated community members</div></Link>
+          <div className="tile__card leftTile" onClick={()=> history.push('/nomination')}>nominated community members</div>
 
           <div className="rightTile">
             <div className="rightTop">
-              <div className="topLeft tile__card"> Volunteer</div>
-              <div className="topRight tile__card"> Partner resources</div>
+              <div className="topLeft tile__card" onClick={()=> history.push('/volunteer')}> Volunteer</div>
+              <div className="topRight tile__card" onClick={()=> history.push('/contact')}> Partner resources</div>
             </div>
-            <div className="tile__card rightTileBottom">
+            <div className="tile__card rightTileBottom" onClick={()=> history.push('/donations')}>
               virtual fundraiser
             </div>
           </div>
