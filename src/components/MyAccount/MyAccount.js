@@ -77,7 +77,7 @@ class MyAccount extends Component {
               <img
                 src={this.props.user.profile_pic}
                 className="myAccountProfileImage"
-                alt="Profile Picture"
+                alt="Profile"
               />
               <div className="profileInfoContent">
                 <p>{this.props.user.first_name}</p>
@@ -95,8 +95,8 @@ class MyAccount extends Component {
               <hr />
               <p>{mappedNominations}</p>
             </div> : <div className='statusAndHistory'>
-              <h1>Nomination Submissions</h1>
-              <Admin/></div>}
+                <h1>Nomination Submissions</h1>
+                <Admin /></div>}
           </main>
         </div>
       </div>
