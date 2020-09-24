@@ -94,12 +94,55 @@
 }
 
 .thanks {
-    position: relative;
-    top: 100px;
-    width: 40%;
+    padding-top: 90px;
+    width: 60%;
+    height: 500px;
     margin: 10px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: pink;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    
 }
+
+.thanks > p {
+    font-weight: normal;
+    font-size: 20px;
+    margin: 10px;
+    width: 70%;
+}
+.proj-container {
+    display: flex;
+    width: 105%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.proj {
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    color: white;
+    border-radius: 5px;
+    z-index: 1;
+    position: relative;
+
+    
+
+}
+
+
+.proj:hover {
+    opacity: 90%;
+    cursor: pointer;
+    
+}
+
+hr {
+    background-color: black;
+    height: 1px;
+    width: 70%;
+}
+
