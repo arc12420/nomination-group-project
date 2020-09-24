@@ -11,7 +11,7 @@ const ADD_DONATION = 'ADD_DONATION';
 export function addDonation(donation) {
   return {
     type: ADD_DONATION,
-    payload: donation 
+    payload: donation
   }
 }
 
@@ -51,11 +51,6 @@ const GET_USER = 'GET_USER';
 export function getUser() {
   const user = axios
     .get('/auth/user')
-    .then((res) => {
-      console.log(res.data)
-      return res.data
-    })
-    .catch((err) => console.log(err))
 
   return {
     type: GET_USER,
@@ -73,13 +68,13 @@ export default function reducer(state = initialState, action) {
     case GET_USER + '_PENDING':
       return state;
     case GET_USER + '_FULFILLED':
-      return { ...state, user: payload, isLoggedIn: true }
+      return { ...state, user: payload.data, isLoggedIn: true }
     case GET_USER + '_REJECTED':
       return initialState;
     case GET_FUNDRAISERS:
       return { ...state, fundraisers: payload };
     case ADD_DONATION:
-      return {...state, donation: payload};
+      return { ...state, donation: payload };
     default:
       return initialState;
   }
