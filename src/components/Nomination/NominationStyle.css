@@ -1,6 +1,7 @@
 .nominationComponent{
-    background-color: #f0d374;
-    height: 100vh;
+    /* background-color: #f0d374; */
+    min-height: 80vh;
+    height: auto;
     width: 100vw;
     /* background-image: url(https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80); */
     display: flex;
@@ -13,11 +14,28 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.nominationInputs{
-    height: 70%;
+.nominationAbout{
+    background-color: #ebebeb;    
+    /* background-image: url(https://www.designbolts.com/wp-content/uploads/2013/02/Rose-Grey-Seamless-Patterns-For-Website-Background.jpg);     */
+    border: 1px solid #adadad;
+    border-radius: 8px;
     width: 80%;
-    background-color: #FFFFF0;    
-    border: 1px solid gray;
+    height: auto;
+    min-height: 40px;
+    /* display: flex; */
+    text-align: center;
+    box-shadow: -10px 10px 11px -7px rgba(0, 0, 0, 01);
+    padding:20px;
+    margin-bottom: 40px;
+}
+
+.nominationInputs{
+    min-height: 450px;
+    height: auto;
+    width: 80%;
+    /* background-image: url(https://www.designbolts.com/wp-content/uploads/2013/02/Rose-Grey-Seamless-Patterns-For-Website-Background.jpg); */
+    background-color: #ebebeb;    
+    border: 1px solid #adadad;
     border-radius: 8px;
     display: flex;
     /* justify-content: center; */
@@ -25,12 +43,34 @@
     justify-content: space-evenly;
     flex-direction: column;
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border-radius: 8px;
-    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+    box-shadow: -10px 10px 11px -7px rgba(0, 0, 0, 01);
+}
+
+.nomNameInputImageAndTitle{
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: row;
+}
+
+.nomNameInputAndTitle{
+    width: 40%;
+    height: auto;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding-left: 20px;
 }
 
 input{
+
     outline: none;
     width:99.3%;
     height: 20px;
@@ -38,6 +78,19 @@ input{
     margin: 0 auto;
     border: 1px solid #003049;
     border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nomContInputAndTitle{
+    width: 96%;
+    height: auto;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    padding-left: 20px;
 }
 
 .whyTheyDeserve{
@@ -54,11 +107,46 @@ input{
     border-radius: 8px;
     width: 80%;
     height: auto;
-    padding: 20px;
-    min-height: 40px;
-    /* display: flex; */
     text-align: center;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+    background-color: white; 
+    padding:10px;
+    padding-left: 20px;
+    color: rgb(20, 20, 20);
+    font-size: 15px;
+    min-height:150px;
+    resize: none;
+}
+/* .whyTheyDeserve{
+    width:99.3%;
+    height:auto;
+    min-height:150px;
+    border-radius: 8px;
+    resize: none;
+    text-overflow: ;
+} */
+
+.nomImage{
+    height:300px;
+    width: 450px;
+    background-color: burlywood;
+    object-fit: scale-down;
+    margin-right: 150px;
+    border-radius: 8px;
+    box-shadow: -10px 10px 11px -7px rgba(0, 0, 0, 01);
+}
+
+.buttonBox{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submitButton{
+    font-size: 20px;
+    margin-right: 27px;
+    margin-bottom: 27px;
+    cursor: pointer;
 }
 .nominationAbout > b {
     font-size: 1.2em;

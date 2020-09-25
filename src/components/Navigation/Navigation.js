@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser, getUser } from '../../redux/reducer';
@@ -16,6 +16,10 @@ const Navigation = (props) => {
   const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState('');
   const [profile_pic, setImage] = useState('');
+
+  useEffect(() => {
+    props.getUser()
+  },[])
 
   const handleEmailInput = (event) => {
     const { value } = event.target;
@@ -62,7 +66,6 @@ const Navigation = (props) => {
       .post('/auth/logout')
       .then(res => {
         props.logoutUser()
-        setSignInToggle(!signInToggle)
         props.history.push('/')
       })
       .catch(err => console.log(err))
@@ -96,7 +99,7 @@ const Navigation = (props) => {
           onClick={() => props.history.push('/')} />
       </section>
       <section className='navigation-directory'>
-        {signInToggle ? (
+        {(signInToggle) && (props.user.user_id === 0) ? (
           <button className='navigation-signIn'
             onClick={() => {
               setSignInToggle(!signInToggle)
