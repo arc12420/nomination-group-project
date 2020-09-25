@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     width: 90%;
+    flex-wrap: wrap;
     /* background-color: red; */
     
     margin: 10px auto;
@@ -10,9 +11,14 @@
 
 div > h3 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 18px;
     text-decoration: underline;
+}
+.status-container {
+    width: 200px;
+    margin-bottom: 20px;
+    margin: 10px 10px;
 }
 
 .status-container > div > button {
@@ -46,4 +52,34 @@ select {
     width: 230px;
     border-radius: 5px;
     margin-bottom: 25px;
+    
+}
+
+.admin-sorter {
+    display: flex;
+    height:auto;
+    min-height: 430px;
+    width: 97%;
+    padding: 10px;  
+    border: grey 1px solid;
+    border-radius: 8px;
+    background-color: ivory;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+}
+
+@media (max-width: 632px) {
+    .admin {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .status-container {
+        margin: 10px auto;
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .account-email {
+        font-size: 18px;
+    }
 }

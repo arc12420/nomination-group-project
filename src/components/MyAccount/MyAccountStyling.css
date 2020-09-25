@@ -60,6 +60,10 @@
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
 }
 
+.history-line {
+    width: 100%;
+}
+
 
 .profileInfoContent{
     min-width: 170px;
