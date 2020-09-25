@@ -50,10 +50,10 @@ class MyAccount extends Component {
     const mappedDonations = this.state.project.map((element, index) => {
       return (
         <div>
-          <hr />
+          <hr className='history-line'/>
           <p>{element.project_name}</p>
           <p>{element.date}</p>
-          <p>${element.total}</p>
+          <p>${element.total / 100}</p>
         </div>
       );
     });
@@ -64,11 +64,12 @@ class MyAccount extends Component {
           <p>{element.name}</p>
           <p>&nbsp;</p>
           <p>{element.content}</p>
-          <hr />
+          <p>Status: {element.status}</p>
+          <hr className='history-line'/>
         </div>
       );
     });
-
+    console.log(this.props)
     return (
       <div className="myAccountComponent">
         <div className="myAccountContent">
@@ -82,21 +83,22 @@ class MyAccount extends Component {
               <div className="profileInfoContent">
                 <p>{this.props.user.first_name}</p>
                 <p>{this.props.user.last_name}</p>
-                <p>{this.props.user.email}</p>
+                <p className='account-email'>{this.props.user.email}</p>
               </div>
             </div>
-            {!this.props.user.isadmin ? <div className="statusAndHistory">
+            <div className="statusAndHistory" >
               Past Donations/ nominations and status of nominations
-              <hr />
+              <hr className='history-line'/>
               <h6>Donations</h6>
               <p>{mappedDonations}</p>
-              <hr />
+              <hr className='history-line'/>
               <h6>Nominations</h6>
-              <hr />
+              <hr className='history-line'/>
               <p>{mappedNominations}</p>
-            </div> : <div className='statusAndHistory'>
-                <h1>Nomination Submissions</h1>
-                <Admin /></div>}
+            </div> 
+            {this.props.user.isadmin ? <div className='statusAndHistory' className='admin-sorter'>
+                
+                <Admin /></div> : null}
           </main>
         </div>
       </div>

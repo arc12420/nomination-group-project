@@ -7,6 +7,7 @@ import axios from 'axios';
 const ThankYou = () => {
     const state = useSelector(r => r);
     const [volunteerProjects, setVolunteerProjects] = useState([]);
+    console.log(state.user.first_name);
 
   useEffect(() => {
       axios.get('/api/volunteer/')
