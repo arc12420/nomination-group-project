@@ -5,53 +5,63 @@ import './administration.css'
 const Administration = () => {
   const [nominations, setNominations] = useState([]);
   const [status, setStatus] = useState('');
-
   
+
+  const cheater = false;
   const underReview = [];
   const finalists = [];
   const accepted = [];
   const declined = [];
-  
-  const changeStatus = (nomination_id) => {
-    axios.put('/api/status', {nomination_id, status})
-    .then(res => console.log(res.data))
+
+  const getNominations = () => {
+    axios.get('/api/nominations')
+    .then(res => {
+      setNominations(res.data)
+      
+    })
     .catch(err => console.log(err))
   }
+  
   useEffect(() => {
-    axios.get('/api/nominations')
-      .then(res => {
-        setNominations(res.data)
-        
-        })
-      .catch(err => console.log(err))
+    getNominations()
+    
+  }, [])
+  
+  useEffect(() => {
+      nominations.map(nom => {
       
-  }, [changeStatus])
-  useEffect(() => {
-    nominations.map(nom => {
-
-      if (nom.status === 'Under Review') {
-        underReview.push(nom)
-      } else if (nom.status === 'Finalist') {
+          if (nom.status === 'Under Review') {
+              underReview.push(nom)
+            } else if (nom.status === 'Finalist') {
         finalists.push(nom)
       } else if (nom.status === 'Accepted!') {
-        accepted.push(nom)
-      } else if (nom.status === 'Declined') {
-        declined.push(nom)
-      }
-    })
-  }, [changeStatus])
-  nominations.map(nom => {
-    if (nom.status === 'Under Review') {
-      underReview.push(nom)
-    } else if (nom.status === 'Finalist') {
-      finalists.push(nom)
+          accepted.push(nom)
+        } else if (nom.status === 'Declined') {
+            declined.push(nom)
+          }
+        })
+      }, [])
+
+      nominations.map(nom => {
+        if (nom.status === 'Under Review') {
+          underReview.push(nom)
+        } else if (nom.status === 'Finalist') {
+          finalists.push(nom)
     } else if (nom.status === 'Accepted!') {
       accepted.push(nom)
     } else if (nom.status === 'Declined') {
       declined.push(nom)
     }
   })
-
+  
+  const changeStatus = (nomination_id) => {
+    axios.put('/api/status', {nomination_id, status})
+    .then(res => {
+      console.log(res.data)
+      setStatus('')})
+    .catch(err => console.log(err))
+    getNominations();
+  }
   
 
   
