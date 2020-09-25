@@ -65,6 +65,7 @@ select {
     border-radius: 8px;
     background-color: ivory;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+    margin-top: 20px;
 }
 
 @media (max-width: 632px) {
