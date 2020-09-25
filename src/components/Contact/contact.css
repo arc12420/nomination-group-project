@@ -73,3 +73,14 @@ form h2 {
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media (max-width: 1024px) {
+  .contact div {
+      width:50%;
+  }
+}
+@media (max-width: 480px) {
+  .contact div {
+      width:80%;
+  }
+}
