@@ -31,19 +31,22 @@
 }
 
 input{
+    outline: none;
     width:99.3%;
-    Height:20px;
+    height: 20px;
+    padding: 10px 5px;
+    margin: 0 auto;
+    border: 1px solid #003049;
     border-radius: 8px;
 }
 
 .whyTheyDeserve{
+    outline: none;
     width:99.3%;
     height:100px;
     border-radius: 8px;
+    border: 1px solid #003049;
 }
-
-/* .submitButton{
-} */
 
 .nominationAbout{
     background-color: #FFFFF0;
@@ -51,8 +54,35 @@ input{
     border-radius: 8px;
     width: 80%;
     height: auto;
+    padding: 20px;
     min-height: 40px;
     /* display: flex; */
     text-align: center;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 01);
+}
+.nominationAbout > b {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.submitButton{
+    outline: none;
+    border: 2px solid #003049;
+    background-color: ivory;
+    border-radius: 4px;
+    color: #003049;
+    margin: 10px 10px;
+    padding: 15px 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+.submitButton:hover{
+    cursor: pointer;
+    background-color: #003049;
+    color: ivory;
+}
+@media ( max-width: 768px ) {
+    .whyTheyDeserve {
+        height: 200px;
+    }
 }
