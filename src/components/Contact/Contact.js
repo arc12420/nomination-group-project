@@ -36,6 +36,7 @@ const Contact = () => {
               type='text'
               name='contactEmail'
               placeholder='Email Address'
+              className="contactEmailInput"
               onChange={e => setContactEmail(e.target.value)}
               value={contactEmail}
               required />
@@ -51,7 +52,7 @@ const Contact = () => {
               required />
           </div>
           <div id='button-box'>
-            <button type='submit'>Submit</button>
+            <button className="contactSubmitButton" type='submit'>Submit</button>
           </div>
         </form>
       </div>

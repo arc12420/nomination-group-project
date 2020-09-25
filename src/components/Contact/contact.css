@@ -14,6 +14,10 @@
   justify-content: center;
 }
 
+.contactEmailInput{  
+  border-radius: 8px;
+}
+
 .contact form {
   height:100%;
   width: 100%;
@@ -52,6 +56,7 @@ form h2 {
 #message-box textarea {
   width:100%;
   height:50%;
+  border-radius: 8px;
 }
 
 #button-box {
@@ -72,6 +77,11 @@ form h2 {
 #button-box button:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.contactSubmitButton{
+  text-transform: uppercase;
+  /* font-family: 'Times New Roman', Times, serif; */
 }
 
 @media (max-width: 1024px) {

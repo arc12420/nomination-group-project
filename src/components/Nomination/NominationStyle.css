@@ -11,7 +11,7 @@
     flex-direction: column;
     font-size: 18px;
     padding-top: 100px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 .nominationAbout{
@@ -34,10 +34,15 @@
 
 .nomAboutTitle{
     font-size: 30px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 .nomAboutParagraph{
     font-size: 20px;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+
 }
 
 .nominationInputs{
@@ -91,6 +96,7 @@
     border: 1px solid #003049;
     border-radius: 8px;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .nomContInputAndTitle{
@@ -111,6 +117,7 @@
     font-size: 19px;
     border-radius: 8px;
     border: 1px solid #003049;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .nominationAbout{
@@ -159,6 +166,8 @@
     margin-right: 27px;
     margin-bottom: 27px;
     cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
 }
 .nominationAbout > b {
     font-size: 1.2em;
