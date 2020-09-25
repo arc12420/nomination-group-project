@@ -42,12 +42,11 @@ const DonationsMapped = (props) => {
                           
                                 <div className="meter__info">
                                     <p>
-                                        ${progressBarWidth} raised of ${project.donation_goal} goal from 
+                                        ${progressBarWidth} raised so far!
                                     </p>
                                 </div>
                             <div className="meter">
                                 <span style={{width: `${progressBarWidth/100}%`, maxWidth: '100%'}}></span>
-                                {/* {console.log(`${project.name}'s total donations >>> ${progressBarWidth}`)} */}
                             </div>
                         </div>
                     </div>

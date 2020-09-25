@@ -54,20 +54,16 @@ const Welcome = () => {
         </div>
       </div>
 
-      <div className="welcome__row" style={{ height: '75vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="welcome__row" style={{ height: '75vh', display:'flex', alignItems:'center', justifyContent:'center'}}>
         <div className="welcome__tiles">
 
-          <div className="tile__card leftTile" onClick={()=> history.push('/nomination')}>nominated community members</div>
+          <div className="tile__card tileOne" onClick={()=> history.push('/nomination')}>nominated community members</div>
 
-          <div className="rightTile">
-            <div className="rightTop">
-              <div className="topLeft tile__card" onClick={()=> history.push('/volunteer')}> Volunteer</div>
-              <div className="topRight tile__card" onClick={()=> history.push('/contact')}> Partner resources</div>
-            </div>
-            <div className="tile__card rightTileBottom" onClick={()=> history.push('/donations')}>
-              virtual fundraiser
-            </div>
-          </div>
+          <div className="tile__card tileTwo" onClick={()=> history.push('/volunteer')}> Volunteer</div>
+          
+          <div className="tile__card tileThree" onClick={()=> history.push('/contact')}> Partner resources</div>
+            
+        <div className="tile__card tileFour" onClick={()=> history.push('/donations')}>virtual fundraiser</div>
 
         </div>
       </div>

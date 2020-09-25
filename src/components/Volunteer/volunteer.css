@@ -1,13 +1,15 @@
 .volunteers {
-    min-height: 100vh;
-    height: auto;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
+    min-height: 100vh;
+    height: auto;
 }
 
 
 .volunteers > h2 {
+
+    margin-bottom: 130px;
     padding-top: 105px;
     margin: 0 auto;
     text-align: center;
@@ -19,8 +21,6 @@
     font-weight: bold;
     width: 20%;
     letter-spacing: 1.5px;
-    
-    
 }
 
 .volunteer__projectCard {
@@ -29,10 +29,10 @@
     justify-items: space-between;
     background: center center;
     background-size: 100%;
+
     margin: 40px;
     height: 40%;
     min-width: 200px;
-    border: 1px solid #F8D463;
     border-radius: 15px;
     box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 1);
     transition: 0.5s;
@@ -85,4 +85,20 @@
     margin: 20px 20px;
     padding-bottom: 15px;
     border-bottom: 1px solid lightgrey;
+}
+@media ( max-width: 768px ){
+    .proj-name {
+        font-size: 20px;
+    }
+    .volunteer__projectCardInfo > span{
+        font-size: 16px;
+    }
+    .volunteer__projectCardInfo > p{
+        font-size: 14px;
+    }
+    .volunteer__projectCardInfo > button{
+        margin: 15px auto;
+        padding: 5px;
+        font-size: 14px;
+    }
 }
