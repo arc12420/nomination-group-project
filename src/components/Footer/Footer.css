@@ -1,54 +1,48 @@
 .footer {
-    height: 200px;
+    height: 300px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #003049;
-    color: Ivory;
-    z-index: 1;
+    display: grid;
+    grid-template-areas: "one two three four";
 }
-.footer__left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 15%;
-    margin-left: 5px;
-    margin-right: 5px;
+.footerCardOne{
+    grid-area: one ;
+    background-color: Yellow;
 }
-
-.footer__middle {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 100%;
-    width: 40%;
-    margin-left: 5px;
-    margin-right: 5px;
-    text-align: left; 
-    color: ivory;
+.footerCardTwo{
+    grid-area: two ;
+    background-color: skyblue;    
 }
-.footer__middleColumn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    width: 30%;
-    margin: 0 15px;
+.footerCardThree{
+    grid-area: three ;
+    background-color: tomato;    
 }
-.footer__middleColumn > h4 {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-left: 50px;
-    text-transform: uppercase;
+.footerCardFour{
+    grid-area: four ;
+    background-color: violet;
 }
 
-.footer__middleColumn > p { 
-    margin-left: 50px;
+@media (max-width: 768px) {
+
+    .footer {
+        height: 600px;
+        grid-template-areas: 
+                            "one four"
+                            "two three";
+    }
 }
 
-.footer__right {
+@media ( max-width: 435px ){
+    .footer {
+        height: auto;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(4, 300px);
+        grid-template-areas: "one" "two" "three" "four";
+    }
+}
+
+/* .footer__media {
     display: flex;
     justify-content: space-evenly;
     align-items: center; 
@@ -57,10 +51,11 @@
     margin-left: 5px;
     margin-right: 5px;
     text-align: center;   
-}
-.footer__right > .MuiSvgIcon-root:hover {
+} */
+
+/* .footer__media > .MuiSvgIcon-root:hover { */
     /* color: #c9c9c0; */
-    color: #FFE565;
+    /* color: #FFE565;
     cursor: pointer;
 
-}
+} */

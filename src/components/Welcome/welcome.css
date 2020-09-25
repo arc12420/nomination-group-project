@@ -299,4 +299,32 @@ body {
         font-size: 1.5rem;
         border-bottom: 1px solid #003049;
     }
+    .welcome__jumbotron {
+        background: #F8D463;
+    }
+    .welcome__tiles{
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 25% 25% 25% 25%;
+        grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four";
+    }
+    .tileOne{
+        grid-area: one;
+    }
+    .tileTwo{
+        grid-area: two;
+    }
+    .tileThree{
+        grid-area: three;
+    }
+    .tileFour{
+        grid-area: four;
+        background-size: cover;
+        background-position: center center;
+    }
 }
