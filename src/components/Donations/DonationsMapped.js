@@ -46,7 +46,7 @@ const DonationsMapped = (props) => {
                                     </p>
                                 </div>
                             <div className="meter">
-                                <span style={{width: `${progressBarWidth/100}%`, maxWidth: '100%'}}></span>
+                                <span style={{width: `${(progressBarWidth/project.donation_goal)*100}%`, maxWidth: '100%'}}></span>
                             </div>
                         </div>
                     </div>
