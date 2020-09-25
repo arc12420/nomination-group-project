@@ -19,7 +19,7 @@ const Navigation = (props) => {
 
   useEffect(() => {
     props.getUser()
-  },[])
+  }, [])
 
   const handleEmailInput = (event) => {
     const { value } = event.target;
@@ -67,6 +67,7 @@ const Navigation = (props) => {
       .then(res => {
         props.logoutUser()
         props.history.push('/')
+        setSignInToggle(!signInToggle)
       })
       .catch(err => console.log(err))
   };

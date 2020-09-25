@@ -177,3 +177,41 @@
     image-rendering: auto;
     object-fit: cover;
 }
+
+@media (max-width: 1024px) {
+    .login-box {
+        height: 25vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation-signIn {
+        width: 40%;
+        font-size: 1rem;
+    }
+
+    .login-box {
+        width: 100%;
+        height: 45vh;
+        padding: 15px;
+    }
+
+    .navigation-navMenu {
+        top:135px;
+        right:10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .login-box {
+        height: 55vh;
+        width: 40vw;
+        padding: 5px;
+    }
+}
