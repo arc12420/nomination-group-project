@@ -30,6 +30,8 @@ app.use(
   })
 );
 
+app.use(express.static(`${__dirname}/../build`));
+
 massive({
   connectionString: CONNECTION_STRING,
   ssl: { rejectUnauthorized: false },
