@@ -149,3 +149,19 @@
   }
 
 }
+
+@media (max-width: 480px) {
+  .about {
+    top: 15vh;
+  }
+
+  .about h2 {
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+  }
+
+  .about p {
+    font-size: 0.9rem;
+    width: 80%;
+  }
+}
