@@ -36,7 +36,7 @@ const Welcome = () => {
         <div className="welcome__jumbotronTitle">
           <h1>KINDNESS IS RISING</h1>
           <h5>Living Through Giving</h5>
-          <button>LEARN MORE</button>
+          <button onClick={history.push('/about')}>LEARN MORE</button>
           <div className="welcome__jumbotronTitleCards">
             <div className="titleCard">
               <p>Take The Pledge</p>
