@@ -4,7 +4,7 @@ import './welcome.css';
 
 const helpingHands = require('../../images/elaine-casap-qgHGDbbSNm8-unsplash.jpg')
 
-const Welcome = () => {
+const Welcome = (props) => {
 
   const history = useHistory();
 
@@ -36,7 +36,7 @@ const Welcome = () => {
         <div className="welcome__jumbotronTitle">
           <h1>KINDNESS IS RISING</h1>
           <h5>Living Through Giving</h5>
-          <button onClick={history.push('/about')}>LEARN MORE</button>
+          <button onClick={()=> props.history.push('/about')}>LEARN MORE</button>
           <div className="welcome__jumbotronTitleCards">
             <div className="titleCard">
               <p>Take The Pledge</p>
