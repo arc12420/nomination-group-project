@@ -80,3 +80,19 @@
     border-radius: 8px;
     image-rendering: auto;
 }
+
+.myAccountTitle{
+    font-size: 30px;
+}
+
+.myAccountProjectName{
+    font-size: 20px;
+}
+
+.myAccountNomineeNameText{
+    font-size: 20px;   
+}
+
+/* .myAccountProjectTotal{
+    
+} */
