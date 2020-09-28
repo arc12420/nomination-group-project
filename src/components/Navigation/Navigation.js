@@ -245,6 +245,10 @@ const Navigation = (props) => {
                   <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/volunteer'>Events</Link></li>
                   : null}
                 <br />
+                {props.location.pathname !== '/about' ?
+                  <li onClick={() => { setHamToggle(!hamToggle) }}><Link to='/about'>About Us</Link></li>
+                  : null}
+                <br />
                 {props.isLoggedIn === true ?
                   <li onClick={logoutUser}><Link onClick={() => setHamToggle(!hamToggle)} to='/'>Logout</Link></li>
                   : null}
