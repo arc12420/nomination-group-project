@@ -23,6 +23,13 @@ class MyAccount extends Component {
     this.getNominations();
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.user.user_id !== prevProps.user.user_id){
+      this.getDonations();
+      this.getNominations();
+    }
+  }
+
   async getDonations() {
     const res = await axios.get(
       `/api/userDonations/${this.props.user.user_id}`
@@ -51,9 +58,9 @@ class MyAccount extends Component {
       return (
         <div>
           <hr className='history-line'/>
-          <p>{element.project_name}</p>
-          <p>{element.date}</p>
-          <p>${element.total / 100}</p>
+          <p className="myAccountProjectName" >{element.project_name}</p>
+          <p className="myAccountProjectDate">Date: {element.date}</p>
+          <p className="myAccountProjectTotal">Total: ${element.total / 100}</p>
         </div>
       );
     });
@@ -61,9 +68,10 @@ class MyAccount extends Component {
     const mappedNominations = this.state.nominations.map((element, index) => {
       return (
         <div>
-          <p>{element.name}</p>
+          <p className="myAccountNomineeNameText">Nominee: {element.name}</p>
           <p>&nbsp;</p>
-          <p>{element.content}</p>
+          <p>Reason: <br/> {element.content}</p>
+          <p>&nbsp;</p>
           <p>Status: {element.status}</p>
           <hr className='history-line'/>
         </div>
@@ -87,12 +95,11 @@ class MyAccount extends Component {
               </div>
             </div>
             <div className="statusAndHistory" >
-              Past Donations/ nominations and status of nominations
               <hr className='history-line'/>
-              <h6>Donations</h6>
+              <h6 className=" myAccountTitle" >My Donations</h6>
               <p>{mappedDonations}</p>
               <hr className='history-line'/>
-              <h6>Nominations</h6>
+              <h6 className=" myAccountTitle">My Nominations</h6>
               <hr className='history-line'/>
               <p>{mappedNominations}</p>
             </div> 
