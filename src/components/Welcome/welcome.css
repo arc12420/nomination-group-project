@@ -32,7 +32,7 @@ body {
     width: 25%;
     margin-left: 150px;
     display: flex;
-    padding: 0;
+    padding: 50px;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
@@ -42,6 +42,7 @@ body {
 .welcome__jumbotronTitle > h1 {
     font-size: 4rem;
     font-weight: 800;
+    padding-top: 50px;
 }
 
 .welcome__jumbotronTitle > h5 {
