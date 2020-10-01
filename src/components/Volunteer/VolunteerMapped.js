@@ -15,7 +15,7 @@ const VolunteerMapped = (props) => {
                 <span>{proj.time}</span>
                 <p>{proj.description}</p>
                 {/* The button below will probably be hooked up to nodemailer or Twilio?*/}
-                <button>Sign Up for Text Reminders</button>
+                {/* <button>Sign Up for Text Reminders</button> */}
             </div>
 
         </div>

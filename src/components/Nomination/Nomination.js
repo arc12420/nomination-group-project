@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./NominationStyle.css";
 import axios from "axios";
 import nomImage from "../../nomImage.jpg";
+import {useSelector} from 'react-redux';
 
 function Nomination(props) {
   const [name, setNomName] = useState([]);
   const [content, setContent] = useState([]);
+  const state = useSelector(r => r);
   // useEffect(() => {}, []);
 
   // ---------------------------Handlers---------------------------------------------
@@ -66,7 +68,7 @@ function Nomination(props) {
         </div> */}
         </div>
         <div className="buttonBox">
-        <button onClick={submitNomination} className="submitButton">
+        <button onClick={state.isLoggedIn ? submitNomination : () => alert('Please create an account to submit a nomination.')} className="submitButton">
           Submit
         </button>
         </div>
