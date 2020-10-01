@@ -6,8 +6,8 @@
 
 -Project Dependencies-
     This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-    Tech/framework Used: React, NodeJS, ExpressJs, ExpressSession, axios, bcrypt, PostgreSQL, Heroku, MaterialUI, Stripe, Nodemailer, ...
-    This project was hosted with... @...
+    Tech/framework Used: React, NodeJS, ExpressJs, ExpressSession, axios, bcrypt, PostgreSQL, Heroku, MaterialUI, Stripe, and Nodemailer.
+    This project was hosted with Digital Ocean @ www.ivory-foundation.com
 
 -Features-
     Users can;
@@ -15,7 +15,6 @@
         2. Nominate members of their community for recognition for their service.
         3. Donate to a specific fundraiser using Stripe, such as renovating the community animal shelter or building a community garden.
         4. Sign up to recieve text notifications and info, using nodemailer, regarding upcoming service projects.
-    to donate with (not a real card??? how to word this?)
 
 -Credits-
 a special thanks to the Kentucky Colonels for their inspiration.
