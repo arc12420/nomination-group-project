@@ -59,7 +59,7 @@ class MyAccount extends Component {
         <div>
           <hr className='history-line'/>
           <p className="myAccountProjectName" >{element.project_name}</p>
-          <p className="myAccountProjectDate">Date: {element.date}</p>
+          <p className="myAccountProjectDate">Date: {(element.date).slice(0, 10)}</p>
           <p className="myAccountProjectTotal">Total: ${element.total / 100}</p>
         </div>
       );
