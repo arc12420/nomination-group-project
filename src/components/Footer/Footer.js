@@ -18,7 +18,7 @@ function Footer() {
         </div>
 
         <div className="siteBy">
-          Site by (insert names here)
+          Site by Austin Carly, Elizabeth Baron, Noal Brown, Jon Hunt
         </div>
 
         <div className="footer__links">
