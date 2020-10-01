@@ -1,5 +1,4 @@
-The Ivory Foundation
-
+-The Ivory Foundation-
     This is a collaborative project of a fictional community charity site. Users can create an account or use the site as a guest. Users are able to see upcoming community service projects, donate to specific fundraisers, and contact charity organizers as well as nominate members in the community for recognition on their service.
 
 -Motivation-
@@ -17,8 +16,6 @@ The Ivory Foundation
         3. Donate to a specific fundraiser using Stripe, such as renovating the community animal shelter or building a community garden.
         4. Sign up to recieve text notifications and info, using nodemailer, regarding upcoming service projects.
     to donate with (not a real card??? how to word this?)
-
--Contribute-
 
 -Credits-
 a special thanks to the Kentucky Colonels for their inspiration.
